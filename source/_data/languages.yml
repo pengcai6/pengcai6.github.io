@@ -1,0 +1,20 @@
+zh-CN:
+  menu:
+    home: 首页
+    archives: 归档
+    categories: 分类
+    tags: 标签
+    about: 关于
+    search: 搜索
+    schedule: 日程表
+    sitemap: 站点地图
+    commonweal: 公益 404
+    message: 留言
+    links: 友情链接
+
+  reward:
+    donate: 打赏
+    wechatpay: 微信支付
+    alipay: 支付宝
+    paypal: 贝宝
+    bitcoin: 比特币
