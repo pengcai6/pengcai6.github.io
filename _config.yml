@@ -1,6 +1,6 @@
 title: 你也不是我的救赎
 subtitle: fyy
-description: 蔡的小破�?
+description: 蔡的小破�?
 keywords: cai
 author: cai6
 language: zh-CN
@@ -28,7 +28,7 @@ external_link:
   exclude: ''
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true
 relative_link: false
 future: true
 syntax_highlighter: highlight.js
