@@ -1,6 +1,6 @@
 title: 你也不是我的救赎
-subtitle: fyy
-description: 蔡的小破�?
+subtitle: 
+description: 蔡的小破站
 keywords: cai
 author: cai6
 language: zh-CN
@@ -58,7 +58,7 @@ pagination_dir: page
 include: null
 exclude: null
 ignore: null
-theme: antiquity
+theme: butterfly
 deploy:
   type: git
   repo: https://github.com/pengcai6/pengcai6.github.io.git
@@ -78,22 +78,35 @@ abbrlink:
   auto_title: false
   auto_date: false
   force: false
+
+
+# Live2D
+## https://github.com/EYHN/hexo-helper-live2d
 live2d:
-  enable: true
-  scriptFrom: local
-  pluginRootPath: live2dw/
-  pluginJsPath: lib/
-  pluginModelPath: assets/
-  tagMode: false
-  debug: false
+  enable: true #开关插件版看板娘
+  scriptFrom: local # 默认
+  pluginRootPath: live2dw/ # 插件在站点上的根目录(相对路径)
+  pluginJsPath: lib/ # 脚本文件相对与插件根目录路径
+  pluginModelPath: assets/ # 模型文件相对与插件根目录路径
+  # scriptFrom: jsdelivr # jsdelivr CDN
+  # scriptFrom: unpkg # unpkg CDN
+  # scriptFrom: https://npm.elemecdn.com/live2d-widget@3.x/lib/L2Dwidget.min.js # 你的自定义 url
+  tagMode: false # 标签模式, 是否仅替换 live2d tag标签而非插入到所有页面中
+  debug: false # 调试, 是否在控制台输出日志
   model:
-    use: live2d-widget-model-z16
+    use: live2d-widget-model-z16 # npm-module package name
+    # use: wanko # 博客根目录/live2d_models/ 下的目录名
+    # use: ./wives/wanko # 相对于博客根目录的路径
+    # use: https://npm.elemecdn.com/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json # 你的自定义 url
   display:
-    position: right
-    width: 150
-    height: 300
+    position: right #控制看板娘位置
+    width: 150 #控制看板娘大小
+    height: 300 #控制看板娘大小
   mobile:
-    show: true
+    show: true # 手机中是否展示
+
+
+
 aplayer:
   cdn: https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js
   style_cdn: https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css
@@ -102,8 +115,15 @@ aplayer:
   asset_inject: false
 backup:
    type: git         # 默认不变
-   theme: antiquity      # 主题名称
+   theme: butterfly      # 备份主题名称
    message: this is my  blog backup  # 提交信息
    repo:
      github: git@github.com:pengcai6/pengcai6.github.io.git,backup
      #gitee: git@gitee.com:Lilbai518/backup-blog.git,master
+
+algolia:
+  applicationID: "32J134PA7W" #AppID
+  apiKey: "889e81155a79470e446da620e99ca9be" #刚刚新建的API Key
+  adminApiKey: "d6b0cf40e68098b44fd7f5b445966dd5" #Admin API Key
+  indexName: "hexo" #这个就是Indices填的
+  chunkSize: 5000

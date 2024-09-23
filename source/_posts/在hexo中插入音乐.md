@@ -2,7 +2,7 @@
 title: 在hexo中插入音乐
 author: cai6
 tags: []
-categories: [hexo技巧]
+categories: [教程]
 abbrlink: 32985
 date: 2023-12-04 18:46:00
 ---
