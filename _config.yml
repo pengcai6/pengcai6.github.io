@@ -122,8 +122,7 @@ backup:
    repo:
      github: git@github.com:pengcai6/pengcai6.github.io.git,backup
      #gitee: git@gitee.com:Lilbai518/backup-blog.git,master
-ignore_pattern:
-  - "**/themes/*/.git"
+
 
 algolia:
   applicationID: "32J134PA7W" #AppID
