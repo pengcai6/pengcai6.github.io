@@ -3,7 +3,7 @@
 # --------------------------------------
 
 nav:
-  logo: https://image.cai094.top/file/df359e61834fee97edc2b.jpg # image
+  logo: https://image.8888-8888.tech/file/df359e61834fee97edc2b.jpg # image
   display_title: true
   fixed: false # fixed navigation bar
 
@@ -15,11 +15,12 @@ menu:
   分类: /分类/ || fas fa-folder-open
   清单||fa fa-heartbeat:
     音乐: /music/ || fas fa-music
-    照片: /Gallery/ || fas fa-images
+    图片: /照片/ || fas fa-images
     电影: /movies/ || fas fa-video
   评论墙: /Artitalk/ || fas fa-message
   Lover:  /HTML/LoveYaoYao.html || fas fa-venus-mars
   友链: /友链/ || fas fa-link
+  动态: /动态/ || fa-solid fa-comments
   关于: /about/ || fas fa-heart
 
 # Code Blocks (代碼相關)
@@ -29,8 +30,8 @@ highlight_theme: mac light #  darker / pale night / light / ocean / mac / mac li
 highlight_copy: true # copy button
 highlight_lang: true # show the code language
 highlight_shrink: true # true: shrink the code blocks / false: expand the code blocks | none: expand code blocks and hide the button
-highlight_height_limit: false # unit: px
-code_word_wrap: false
+highlight_height_limit: 230 # unit: px
+code_word_wrap: true
 
 # Social Settings (社交圖標設置)
 # formal:
@@ -43,21 +44,21 @@ social:
 # --------------------------------------
 
 # Favicon（網站圖標）
-favicon: /img/xie.png
+favicon: /img/动画版小谢/xie.png
 
 # Avatar (頭像)
 avatar:
-  img: https://image.cai094.top/file/df359e61834fee97edc2b.jpg
+  img: https://image.8888-8888.tech/file/df359e61834fee97edc2b.jpg
   effect: false
 
 # Disable all banner image
 disable_top_img: false
 
 # The banner image of home page
-index_img: https://image.cai094.top/file/c94ff7e3b148a349071fb.png
+index_img: https://image.8888-8888.tech/file/c94ff7e3b148a349071fb.png
 
 # If the banner of page not setting, it will show the top_img
-default_top_img: https://image.cai094.top/file/c94ff7e3b148a349071fb.png
+default_top_img: https://image.8888-8888.tech/file/c94ff7e3b148a349071fb.png
 
 # The banner image of archive page
 archive_img:
@@ -82,24 +83,37 @@ category_per_img:
 
 cover:
   # display the cover or not (是否顯示文章封面)
-  index_enable: true
-  aside_enable: true
+  index_enable: false
+  aside_enable: fasle
   archives_enable: true
   # the position of cover in home page (封面顯示的位置)
   # left/right/both
   position: both
   # When cover is not set, the default cover is displayed (當沒有設置cover時，默認的封面顯示)
-  default_cover: /img/xie.png
+  default_cover: 
+    - https://s2.loli.net/2025/01/19/UdM3Z4TqVevjaAm.jpg
+    - https://s2.loli.net/2025/01/19/tvI7KB8huc3MsSG.jpg
+    - https://s2.loli.net/2025/01/19/TvOYn3fdGEHqMPQ.jpg
+    - https://s2.loli.net/2025/01/19/SnXVztGCJQ5HyKf.jpg
+    - https://s2.loli.net/2025/01/19/fyQWxzCFY1d39vP.jpg
+    - https://s2.loli.net/2025/01/19/eYU1DCaiHbLcTNr.jpg
+    - https://s2.loli.net/2025/01/19/nWjN97Kdc48uXml.jpg
+    - https://s2.loli.net/2025/01/19/c5rn4zLCaSObFQY.jpg
+    - https://s2.loli.net/2025/01/19/4i7tqWsmzhNroID.jpg
+    - https://s2.loli.net/2025/01/19/3OgFsqvYRKptlX7.jpg
+    - https://s2.loli.net/2025/01/19/CJmOHKGSstqyakW.jpg
+    - https://s2.loli.net/2025/01/19/3CyKWeNg5JoThkR.jpg
+    - https://s2.loli.net/2025/01/19/QkJnaV31IjyA8wH.jpg
+
 # Replace Broken Images (替換無法顯示的圖片)
 error_img:
   flink: /img/friend_404.gif
-  post_page: /img/404.jpg
-
+  post_page: /img/1691894007699.jpeg
 # A simple 404 page
 error_404:
   enable: true
-  subtitle: "Page Not Found"
-  background: https://i.loli.net/2020/05/19/aKOcLiyPl2JQdFD.png
+  subtitle: "出错了哦，请重试或者联系管理者"
+  background: https://s2.loli.net/2025/01/19/4i7tqWsmzhNroID.jpg
 
 post_meta:
   page: # Home Page
@@ -139,7 +153,7 @@ photofigcaption: true
 copy:
   enable: true
   copyright:
-    enable: false
+    enable: ture
     limit_count: 50
 
 # Post
@@ -151,7 +165,7 @@ toc:
   page: false
   number: true
   expand: false
-  style_simple: false # for post
+  style_simple: true # for post
   scroll_percent: true
 
 post_copyright:
@@ -209,7 +223,7 @@ footer:
   owner:
     enable: true
     since: 2020
-  custom_text: Hi, welcome to my <a href="https://www.cai094.top/">blog</a>!
+  custom_text: Hi, welcome to my <a href="https://www.8888-8888.tech/">blog</a>!
   copyright: true # Copyright of theme and framework
 
 # aside (側邊欄)
@@ -362,17 +376,25 @@ katex:
 # see https://butterfly.js.org/posts/ceeb73f/#搜索系統
 # --------------------------------------
 
+
+search:
+  # Choose: algolia_search / local_search / docsearch
+  # leave it empty if you don't need search
+  use: local_search
+  placeholder: 随便搜搜吧
+
+
 # Algolia search
 algolia_search:
-  enable: true
+  enable: false
   hits:
     per_page: 6
 
 # Local search
 local_search:
-  enable: false
+  enable: true
   # Preload the search data when the page loads.
-  preload: false
+  preload: true
   # Show top n results per article, show all results by setting to -1
   top_n_per_article: 1
   # Unescape html strings to the readable one.
@@ -646,7 +668,7 @@ text_align_justify: false
 # Website Background (設置網站背景)
 # can set it to color or image (可設置圖片 或者 顔色)
 # The formal of image: url(http://xxxxxx.com/xxx.jpg)
-background: url(https://image.cai094.top/file/bd2f382a87bac5ba80091.jpg)
+background: url(https://image.8888-8888.tech/file/bd2f382a87bac5ba80091.jpg)
 
 # Footer Background
 footer_bg: false
@@ -753,7 +775,7 @@ hr_icon:
 
 # the subtitle on homepage (主頁subtitle)
 subtitle:
-  enable: false
+  enable: true
   # Typewriter Effect (打字效果)
   effect: true
   # Customize typed.js (配置typed.js)
@@ -761,13 +783,15 @@ subtitle:
   typed_option:
   # source 調用第三方服務
   # source: false 關閉調用
-  # source: 1  調用一言網的一句話（簡體） https://hitokoto.cn/
+     source: 1  調用一言網的一句話（簡體） https://hitokoto.cn/
   # source: 2  調用一句網（簡體） https://yijuzhan.com/
   # source: 3  調用今日詩詞（簡體） https://www.jinrishici.com/
   # subtitle 會先顯示 source , 再顯示 sub 的內容
-  source: false
+  # source: false
   # 如果關閉打字效果，subtitle 只會顯示 sub 的第一行文字
   sub:
+
+
 
 # Loading Animation (加載動畫)
 preloader:
@@ -782,7 +806,7 @@ preloader:
 # wordcount (字數統計)
 # see https://butterfly.js.org/posts/ceeb73f/#字數統計
 wordcount:
-  enable: false
+  enable: true
   post_wordcount: true
   min2read: true
   total_wordcount: true
@@ -860,14 +884,14 @@ aplayerInject:
 # position 彈窗位置
 # 可選 top-left / top-center / top-right / bottom-left / bottom-center / bottom-right
 snackbar:
-  enable: false
+  enable: true
   position: bottom-left
   bg_light: "#49b1f5" # The background color of Toast Notification in light mode
   bg_dark: "#1f1f1f" # The background color of Toast Notification in dark mode
 
 # https://instant.page/
 # prefetch (預加載)
-instantpage: false
+instantpage: true
 
 # https://github.com/vinta/pangu.js
 # Insert a space between Chinese character and English character (中英文之間添加空格)
@@ -1106,6 +1130,7 @@ gitcalendar:
   gitcalendar_css: https://npm.elemecdn.com/hexo-filter-gitcalendar/lib/gitcalendar.css
   gitcalendar_js: https://npm.elemecdn.com/hexo-filter-gitcalendar/lib/gitcalendar.js
   
+# butterfly主页动画
 wowjs:
   enable: true #控制动画开关。true是打开，false是关闭
   priority: 10 #过滤器优先级
@@ -1113,12 +1138,22 @@ wowjs:
   animateitem:
     - class: recent-post-item #必填项，需要添加动画的元素的class
       style: animate__zoomIn #必填项，需要添加的动画
-      duration: 2s #选填项，动画持续时间，单位可以是ms也可以是s。例如3s，700ms。
-      delay: 1s #选填项，动画开始的延迟时间，单位可以是ms也可以是s。例如3s，700ms。
-      offset: 100 #选填项，开始动画的距离（相对浏览器底部）
-      iteration: 2 #选填项，动画重复的次数
+      duration: 1500ms #选填项，动画持续时间，单位可以是ms也可以是s。例如3s，700ms。
+      delay: 0ms #选填项，动画开始的延迟时间，单位可以是ms也可以是s。例如3s，700ms。
+      offset: 0 #选填项，开始动画的距离（相对浏览器底部）
+      iteration: 1 #选填项，动画重复的次数
     - class: card-widget
       style: animate__zoomIn
+      duration: 1500ms #选填项，动画持续时间，单位可以是ms也可以是s。例如3s，700ms。
+      delay: 0ms #选填项，动画开始的延迟时间，单位可以是ms也可以是s。例如3s，700ms。
+      offset: 0 #选填项，开始动画的距离（相对浏览器底部）
+      iteration: 1 #选填项，动画重复的次数
+    - class: container
+      style: animate__zoomIn
+      duration: 1500ms #选填项，动画持续时间，单位可以是ms也可以是s。例如3s，700ms。
+      delay: 0ms #选填项，动画开始的延迟时间，单位可以是ms也可以是s。例如3s，700ms。
+      offset: 0 #选填项，开始动画的距离（相对浏览器底部）
+      iteration: 1 #选填项，动画重复的次数
   animate_css: https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/animate.min.css
   wow_js: https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow.min.js
   wow_init_js: https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow_init.js

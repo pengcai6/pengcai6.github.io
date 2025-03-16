@@ -242,3 +242,12 @@ algolia:
 #   # 开启butterfly 主题文章双栏布局插件
 butterfly_article_double_row:
   enable: false
+# 首页卡片佈局
+index_layout: 3  
+
+search:
+  path: search.xml
+  field: post
+  content: true
+  format: html
+  template: ./search.xml  
