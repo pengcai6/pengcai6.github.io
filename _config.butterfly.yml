@@ -3,9 +3,9 @@
 # --------------------------------------
 
 nav:
-  logo: https://image.8888-8888.tech/file/df359e61834fee97edc2b.jpg # image
+  logo: /img/favicon.png # 使用本地logo图片
   display_title: true
-  fixed: false # fixed navigation bar
+  fixed: true # 固定导航栏，提升用户体验
 
 # Menu 目錄
 menu:
@@ -26,11 +26,11 @@ menu:
 # Code Blocks (代碼相關)
 # --------------------------------------
 
-highlight_theme: mac light #  darker / pale night / light / ocean / mac / mac light / false
+highlight_theme: mac #  darker / pale night / light / ocean / mac / mac light / false
 highlight_copy: true # copy button
 highlight_lang: true # show the code language
-highlight_shrink: true # true: shrink the code blocks / false: expand the code blocks | none: expand code blocks and hide the button
-highlight_height_limit: 230 # unit: px
+highlight_shrink: false # true: shrink the code blocks / false: expand the code blocks | none: expand code blocks and hide the button
+highlight_height_limit: 300 # unit: px
 code_word_wrap: true
 
 # Social Settings (社交圖標設置)
@@ -48,17 +48,17 @@ favicon: /img/动画版小谢/xie.png
 
 # Avatar (頭像)
 avatar:
-  img: https://image.8888-8888.tech/file/df359e61834fee97edc2b.jpg
-  effect: false
+  img: /img/favicon.png
+  effect: true
 
 # Disable all banner image
 disable_top_img: false
 
 # The banner image of home page
-index_img: https://image.8888-8888.tech/file/c94ff7e3b148a349071fb.png
+index_img: /img/idex_img.png
 
 # If the banner of page not setting, it will show the top_img
-default_top_img: https://image.8888-8888.tech/file/c94ff7e3b148a349071fb.png
+default_top_img: /img/bg/bg.jpg
 
 # The banner image of archive page
 archive_img:
@@ -83,25 +83,20 @@ category_per_img:
 
 cover:
   # display the cover or not (是否顯示文章封面)
-  index_enable: false
-  aside_enable: fasle
+  index_enable: true
+  aside_enable: true
   archives_enable: true
   # the position of cover in home page (封面顯示的位置)
   # left/right/both
   position: both
   # When cover is not set, the default cover is displayed (當沒有設置cover時，默認的封面顯示)
   default_cover: 
-    - https://s2.loli.net/2025/01/19/UdM3Z4TqVevjaAm.jpg
-    - https://s2.loli.net/2025/01/19/tvI7KB8huc3MsSG.jpg
-    - https://s2.loli.net/2025/01/19/TvOYn3fdGEHqMPQ.jpg
-    - https://s2.loli.net/2025/01/19/SnXVztGCJQ5HyKf.jpg
-    - https://s2.loli.net/2025/01/19/fyQWxzCFY1d39vP.jpg
-    - https://s2.loli.net/2025/01/19/eYU1DCaiHbLcTNr.jpg
-    - https://s2.loli.net/2025/01/19/nWjN97Kdc48uXml.jpg
-    - https://s2.loli.net/2025/01/19/c5rn4zLCaSObFQY.jpg
-    - https://s2.loli.net/2025/01/19/4i7tqWsmzhNroID.jpg
-    - https://s2.loli.net/2025/01/19/3OgFsqvYRKptlX7.jpg
-    - https://s2.loli.net/2025/01/19/CJmOHKGSstqyakW.jpg
+    - /img/idex_img.png
+    - /img/image.png
+    - /img/image-1.png
+    - /img/1691894007699.jpeg
+    - /img/bg/bg.jpg
+    - https://image.8888-8888.tech/file/c94ff7e3b148a349071fb.png
     - https://s2.loli.net/2025/01/19/3CyKWeNg5JoThkR.jpg
     - https://s2.loli.net/2025/01/19/QkJnaV31IjyA8wH.jpg
 
@@ -164,28 +159,32 @@ toc:
   post: true
   page: false
   number: true
-  expand: false
-  style_simple: true # for post
+  expand: true # 自动展开目录
+  style_simple: false # 使用更详细的目录样式
   scroll_percent: true
+  # 以下是目录优化配置
+  max_depth: 4 # 最大目录深度
+  min_depth: 1 # 最小目录深度
+  title: "📑 文章目录"
+  enable_auto_number: true # 自动编号
+  collapse_depth: 0 # 0表示不折叠
 
 post_copyright:
   enable: true
   decode: false
-  author_href:
+  author_href: https://www.cai094.top
   license: CC BY-NC-SA 4.0
   license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
+  copyright_text: 本博客所有文章除特别声明外，均采用 CC BY-NC-SA 4.0 许可协议，转载请注明来自 "cai的小破站"
 
 # Sponsor/reward
 reward:
   enable: true
   text: 如果喜欢，尽情打赏
   QR_code:
-    - img: img/wechat/wechat.jpg
+    - img: /img/wechat/wechat.jpg
       link:
-      text: wechat
-    # - img: /img/alipay.jpg
-    #   link:
-    #   text: alipay
+      text: 微信赞赏
 
 # Post edit
 # Easily browse and edit blog source code online.
@@ -200,6 +199,8 @@ related_post:
   enable: true
   limit: 6 # Number of posts displayed
   date_type: created # or created or updated 文章日期顯示創建日或者更新日
+  headline: '📚 相关推荐'
+  include_all_time: true # 是否包含所有时间的文章，如设置为false，则只会推荐最近的文章
 
 # post_pagination (分頁)
 # value: 1 || 2 || false
@@ -210,12 +211,12 @@ post_pagination: 1
 
 # Displays outdated notice for a post (文章過期提醒)
 noticeOutdate:
-  enable: false
+  enable: true
   style: flat # style: simple/flat
-  limit_day: 500 # When will it be shown
+  limit_day: 365 # When will it be shown
   position: top # position: top/bottom
-  message_prev: It has been
-  message_next: days since the last update, the content of the article may be outdated.
+  message_prev: 本文最后更新于
+  message_next: 天前，文章内容可能已经过时。
 
 # Footer Settings
 # --------------------------------------
@@ -223,7 +224,7 @@ footer:
   owner:
     enable: true
     since: 2020
-  custom_text: Hi, welcome to my <a href="https://www.8888-8888.tech/">blog</a>!
+  custom_text: Hi, welcome to my <a href="https://www.8888-8888.tech/">blog</a>! <span id="runtime"></span>
   copyright: true # Copyright of theme and framework
 
 # aside (側邊欄)
@@ -241,7 +242,7 @@ aside:
     category: true
   card_author:
     enable: true
-    description:
+    description: "热爱编程，记录生活"
     button:
       enable: true
       icon: fab fa-github
@@ -249,7 +250,7 @@ aside:
       link: https://github.com/pengcai6
   card_announcement:
     enable: true
-    content: 欢迎来到cai的博客
+    content: "欢迎来到cai的博客！希望这里的内容对你有所帮助~"
   card_recent_post:
     enable: true
     limit: 5 # if set 0 will show all
@@ -314,7 +315,7 @@ newest_comments:
 
 # Conversion between Traditional and Simplified Chinese (簡繁轉換)
 translate:
-  enable: false
+  enable: true
   # The text of a button
   default: 繁
   # the language of website (1 - Traditional Chinese/ 2 - Simplified Chinese）
@@ -338,10 +339,10 @@ darkmode:
   # autoChangeMode: 1  Following System Settings, if the system doesn't support dark mode, it will switch dark mode between 6 pm to 6 am
   # autoChangeMode: 2  Switch dark mode between 6 pm to 6 am
   # autoChangeMode: false
-  autoChangeMode: false
+  autoChangeMode: 1
   # Set the light mode time. The value is between 0 and 24. If not set, the default value is 6 and 18
-  start: # 8
-  end: # 22
+  start: 7
+  end: 19
 
 # show scroll percent in scroll-to-top button
 rightside_scroll_percent: true
@@ -350,9 +351,9 @@ rightside_scroll_percent: true
 # Choose: readmode,translate,darkmode,hideAside,toc,chat,comment
 # Don't repeat 不要重複
 rightside_item_order:
-  enable: false
+  enable: true
   hide: # readmode,translate,darkmode,hideAside
-  show: # toc,chat,comment
+  show: toc,readmode,translate,darkmode,hideAside,comment
 
 # Math (數學)
 # --------------------------------------
@@ -396,10 +397,10 @@ local_search:
   # Preload the search data when the page loads.
   preload: true
   # Show top n results per article, show all results by setting to -1
-  top_n_per_article: 1
+  top_n_per_article: 3
   # Unescape html strings to the readable one.
-  unescape: false
-  CDN:
+  unescape: true
+  CDN: # 可以留空
 
 # Docsearch
 docsearch:
@@ -416,7 +417,7 @@ docsearch:
 # https://github.com/overtrue/share.js
 sharejs:
   enable: true
-  sites: facebook,twitter,wechat,weibo,qq
+  sites: wechat,weibo,qq,qzone,douban
 
 # AddToAny
 # https://www.addtoany.com/
@@ -472,11 +473,12 @@ gitalk:
 valine:
   appId: S7UqPrUaopC1azLVxojZVzGG-gzGzoHsz # leancloud application app id
   appKey: oOo7hG23Re6RgNzU7uDqST1R # leancloud application app key
-  avatar: mp # gravatar style https://valine.js.org/#/avatar
+  avatar: wavatar # gravatar style 更友好的头像：wavatar, retro, identicon, monsterid, mm
   serverURLs: # This configuration is suitable for domestic custom domain name users, overseas version will be automatically detected (no need to manually fill in)
-  bg: # valine background
-  visitor: false
+  bg: /img/bg/comment_bg.png # valine background - 可以设置评论区背景
+  visitor: true # 开启访问量统计
   option:
+    placeholder: 欢迎评论交流~ # 自定义评论框占位符文本
 
 # waline - A simple comment system with backend support fork from Valine
 # https://waline.js.org/
@@ -707,8 +709,8 @@ canvas_ribbon:
 
 # Fluttering Ribbon (動態彩帶)
 canvas_fluttering_ribbon:
-  enable: false
-  mobile: false
+  enable: true
+  mobile: true
 
 # canvas_nest
 # https://github.com/hustcc/canvas-nest.js
@@ -749,9 +751,9 @@ display_mode: light
 # Beautify (美化頁面顯示)
 beautify:
   enable: true
-  field: post # site/post
-  title-prefix-icon: # '\f0c1'
-  title-prefix-icon-color: # '#F47466'
+  field: site # site/post - 整站应用
+  title-prefix-icon: '\f0c1'
+  title-prefix-icon-color: '#49b1f5'
 
 # Global font settings
 # Don't modify the following settings unless you know how they work (非必要不要修改)
@@ -810,6 +812,8 @@ wordcount:
   post_wordcount: true
   min2read: true
   total_wordcount: true
+  # 将统计信息显示在文章顶部
+  enable_post_meta: true
 
 # Lightbox (圖片大圖查看模式)
 # --------------------------------------
@@ -829,9 +833,12 @@ fancybox: true
 # series (系列文章)
 series:
   enable: true
-  orderBy: "title" # Order by title or date
+  orderBy: "date" # Order by title or date - 按发布日期排序更实用
   order: 1 # Sort of order. 1, asc for ascending; -1, desc for descending
   number: true
+  heading: '📑 本系列其他文章'
+  display_cover: true # 是否显示系列文章的封面
+  link_theme: primary # primary, success, info, warning, danger
 
 # abcjs (樂譜渲染)
 # See https://github.com/paulrosen/abcjs
@@ -869,10 +876,10 @@ note:
 # It may contain bugs and unstable, give feedback when you find the bugs.
 # https://github.com/MoOx/pjax
 pjax:
-  enable: false
+  enable: true
   exclude:
-    # - xxxx
-    # - xxxx
+    - /music/
+    - /no-pjax/
 
 # Inject the css and script (aplayer/meting)
 aplayerInject:
@@ -902,20 +909,21 @@ pangu:
 # Lazyload (圖片懶加載)
 # https://github.com/verlok/vanilla-lazyload
 lazyload:
-  enable: false
+  enable: true
   field: site # site/post
-  placeholder:
-  blur: false
+  placeholder: /img/loading.gif # 可以添加loading图片
+  blur: true
 
 # PWA
 # See https://github.com/JLHwung/hexo-offline
 # ---------------
-# pwa:
-#   enable: false
-#   manifest: /pwa/manifest.json
-#   apple_touch_icon: /pwa/apple-touch-icon.png
-#   favicon_32_32: /pwa/32.png
-#   favicon_16_16: /pwa/16.png
+pwa:
+  enable: true
+  manifest: /pwa/manifest.json
+  apple_touch_icon: /img/favicon.png
+  favicon_32_32: /img/favicon.png
+  favicon_16_16: /img/favicon.png
+  mask_icon: /img/favicon.png
 #   mask_icon: /pwa/safari-pinned-tab.svg
 
 # Open graph meta tags
@@ -923,8 +931,8 @@ lazyload:
 Open_Graph_meta:
   enable: true
   option:
-    # twitter_card:
-    # twitter_image:
+    twitter_card: summary_large_image
+    twitter_image: /img/favicon.png
     # twitter_id:
     # twitter_site:
     # google_plus:
@@ -942,12 +950,14 @@ inject:
     # - <link rel="stylesheet" href="/xxx.css">
     - <link rel="stylesheet" href="/css/universe.css">
     - <link rel="stylesheet" href="/css/custom.css">
+    - <link rel="stylesheet" href="/css/dynamic-background.css">
 
   bottom:
     # - <script src="xxxx"></scrip>
     - <canvas id="universe"></canvas>
     - <script defer src="/js/universe.js"></script>
     - <script defer src="/js/cursor.js"></script>
+    - <script defer src="/js/dynamic-background.js"></script>
 
 # CDN
 # Don't modify the following settings unless you know how they work
