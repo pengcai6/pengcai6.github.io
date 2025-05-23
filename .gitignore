@@ -84,6 +84,11 @@ $RECYCLE.BIN/
 .git/
 *.orig
 
+# 主题相关 - 忽略主题文件夹中的 Git 仓库
+themes/*/.git/
+themes/*/node_modules/
+themes/*/.gitignore
+
 # ====================
 # 构建和部署相关
 # ====================
