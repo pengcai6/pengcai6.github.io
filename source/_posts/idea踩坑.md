@@ -8,5 +8,6 @@ categories:
 keywords:
 ---
 # idae踩坑  
-![修改示例](idea踩坑/image.png)  
+
+![修改示例](image1.png)  
 ***需要在这里将java设置与项目相同，否则无法打包***

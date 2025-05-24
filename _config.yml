@@ -59,7 +59,13 @@ pagination_dir: page
 include: null
 exclude: null
 ignore: null
-theme: butterfly
+
+# marked配置 - 用于正确处理资源文件路径
+marked:
+  prependRoot: true
+  postAsset: true
+
+theme: next
 deploy:
   type: git
   repo: https://github.com/pengcai6/pengcai6.github.io.git
@@ -124,12 +130,12 @@ backup:
      #gitee: git@gitee.com:Lilbai518/backup-blog.git,master
 
 
-algolia:
-  applicationID: "32J134PA7W" #AppID
-  apiKey: "889e81155a79470e446da620e99ca9be" #刚刚新建的API Key
-  adminApiKey: "d6b0cf40e68098b44fd7f5b445966dd5" #Admin API Key
-  indexName: "hexo" #这个就是Indices填的
-  chunkSize: 5000
+# algolia:
+#   applicationID: "32J134PA7W" #AppID
+#   apiKey: "889e81155a79470e446da620e99ca9be" #刚刚新建的API Key
+#   adminApiKey: "d6b0cf40e68098b44fd7f5b445966dd5" #Admin API Key
+#   indexName: "hexo" #这个就是Indices填的
+#   chunkSize: 5000
 
 # # # _config.yml
 # # OhMyLive2d:
@@ -239,14 +245,33 @@ algolia:
 #   #   }
 
 
-#   # 开启butterfly 主题文章双栏布局插件
+# 开启butterfly 主题文章双栏布局插件
 butterfly_article_double_row:
   enable: false
 # 首页卡片佈局
-index_layout: 3  
+index_layout: 3
 
-search:
-  path: search.xml
-  field: post
-  content: true
-  format: html
+# search:
+#   path: search.xml
+#   field: post
+#   content: true
+#   format: html
+
+# hexo-github-calendar 贡献度热力图
+# githubcalendar:
+#   enable: true        # 是否启用本插件
+#   enable_page: all    # 要生效的页面，如 / 首页，/about/ 介绍页等，改为all让所有页面都可以显示
+#   user: pengcai6      # 替换为你的 GitHub 用户名
+#   layout:
+#     type: class
+#     name: main-inner
+#     index: 0
+#   githubcalendar_html: '<div class="recent-post-item" style="width:100%;height:auto;padding:10px;"><div id="github_loading" style="width:10%;height:100%;margin:0 auto;display: block"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 50 50" style="enable-background:new 0 0 50 50" xml:space="preserve"><path fill="#d0d0d0" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform></path></svg></div><div id="github_container"></div></div>'
+#   pc_minheight: 280px
+#   mobile_minheight: 0px
+#   # 贡献统计的梯度色卡值，可自行调整
+#   color: "['#ebedf0', '#a2f7af', '#6ce480', '#54ad63', '#469252', '#31753c', '#1f5f2a', '#13531f', '#084111', '#032b09', '#000000']"
+#   api: https://github.8888-8888.tech/api
+#   # 本地文件路径，请下载到主题文件夹的source目录下
+#   calendar_js: /js/hexo_githubcalendar.js
+#   plus_style: ""

@@ -9,4 +9,4 @@ categories:
 ---
 # 注意配置
 
-![配置如图](openGl配置/{1B68A5CC-4897-465F-8DCC-F36B0C8508AD}.png)
+![OpenGL配置截图](image1.png)

@@ -1,0 +1,225 @@
+# ==============================================================
+# NexT 主题配置文件
+# 参考：https://theme-next.js.org/docs/getting-started/
+# ==============================================================
+
+# ---------------------------------------------------------------
+# 主题方案选择
+# ---------------------------------------------------------------
+# Schemes: Muse | Mist | Pisces | Gemini
+scheme: Gemini
+
+# 启用黑暗模式
+darkmode: true
+
+# ---------------------------------------------------------------
+# 网站图标设置
+# ---------------------------------------------------------------
+favicon:
+  small: /img/动画版小谢/xie.png
+  medium: /img/动画版小谢/xie.png
+  apple_touch_icon: /img/动画版小谢/xie.png
+
+# ---------------------------------------------------------------
+# 菜单设置
+# ---------------------------------------------------------------
+# 格式: 路径 || 图标
+# 图标来自 Font Awesome
+menu:
+  home: / || fa fa-home
+  archives: /archives/ || fa fa-archive
+  tags: /标签/ || fa fa-tags
+  categories: /分类/ || fa fa-folder-open
+  xiaoxie: /小谢/ || fa fa-heart
+  music: /music/ || fa fa-music
+  photos: /照片/ || fa fa-images
+  movies: /movies/ || fa fa-video
+  comment-wall: /Artitalk/ || fa fa-message
+  lover: /HTML/LoveYaoYao.html || fa fa-venus-mars
+  friends: /友链/ || fa fa-link
+  dynamics: /动态/ || fa fa-comments
+  about: /about/ || fa fa-user
+
+# ---------------------------------------------------------------
+# 侧边栏设置
+# ---------------------------------------------------------------
+sidebar:
+  position: right
+  display: post
+  padding: 18
+  offset: 12
+
+# 头像设置
+avatar:
+  url: /images/avatar.png
+  rounded: true
+  rotated: true
+
+# 社交链接设置
+# 格式: 网站名字: 链接 || 图标
+social:
+  GitHub: https://github.com/pengcai6 || fab fa-github
+  E-Mail: mailto:pengcai6@gmail.com || fa fa-envelope
+
+# ---------------------------------------------------------------
+# 文章目录设置
+# ---------------------------------------------------------------
+toc:
+  enable: true
+  number: true
+  wrap: false
+  expand_all: false
+  max_depth: 6
+
+# ---------------------------------------------------------------
+# 代码块设置
+# ---------------------------------------------------------------
+codeblock:
+  theme:
+    light: default
+    dark: atom-one-dark
+  copy_button:
+    enable: true
+    style: default
+
+# ---------------------------------------------------------------
+# 返回顶部按钮
+# ---------------------------------------------------------------
+back2top:
+  enable: true
+  sidebar: false
+  scrollpercent: true
+
+# ---------------------------------------------------------------
+# 自定义页脚设置
+# ---------------------------------------------------------------
+footer:
+  since: 2023
+  icon:
+    name: fa fa-heart
+    animated: true
+    color: "#ff0000"
+  copyright: cai6
+  powered: true
+  beian:
+    enable: false
+    icp:
+
+# ---------------------------------------------------------------
+# 评论系统设置 - 使用 Valine
+# ---------------------------------------------------------------
+comments:
+  active: valine
+  storage: true
+  lazyload: true
+  nav:
+    valine:
+      text: Valine
+      order: 1
+  
+# Valine 评论系统配置
+# 更多文档: https://valine.js.org
+valine:
+  enable: true
+  appid: S7UqPrUaopC1azLVxojZVzGG-gzGzoHsz # 从 LeanCloud 获取
+  appkey: oOo7hG23Re6RgNzU7uDqST1R # 从 LeanCloud 获取
+  notify: false
+  verify: false
+  placeholder: 欢迎评论交流~
+  avatar: wavatar # 头像风格
+  guest_info: nick,mail,link
+  pageSize: 10
+  visitor: true
+  comment_count: true
+  recordIP: true
+  serverURLs:
+  bg: /img/bg/comment_bg.png # 评论区背景
+
+# ---------------------------------------------------------------
+# 文章设置
+# ---------------------------------------------------------------
+post:
+  # 文章元数据展示
+  meta:
+    item_text: true
+    created_at: true
+    updated_at: true
+    categories: true
+    tags: true
+  # 阅读更多按钮
+  read_more:
+    enable: true
+
+# ---------------------------------------------------------------
+# 样式设置
+# ---------------------------------------------------------------
+# 使用自定义 CSS 文件
+custom_file_path:
+  style: source/css/custom.css # 自定义样式
+  # 添加自定义脚本引入
+  bodyEnd: source/js/custom-body-end.js # 在 body 末尾引入自定义脚本
+  head: source/js/custom-head.js # 在 head 中引入自定义脚本
+
+# 启用动画效果
+motion:
+  enable: true
+  async: false
+
+# ---------------------------------------------------------------
+# CDN 设置 (默认使用本地静态文件)
+# ---------------------------------------------------------------
+vendors:
+  internal: local
+
+# ---------------------------------------------------------------
+# 一些其他设置
+# ---------------------------------------------------------------
+# Canvas背景
+canvas_ribbon:
+  enable: false
+
+# 打字动画效果
+typed_posts:
+  enable: false
+
+# 加载进度条
+pace:
+  enable: false
+
+# 平滑滚动
+smoothScroll: true
+
+# 启用本地搜索功能
+local_search:
+  enable: true
+  trigger: auto
+  top_n_per_article: 1
+
+# ---------------------------------------------------------------
+# Note 标签设置 (类似 Butterfly 的 Note)
+# ---------------------------------------------------------------
+note:
+  # Note tag style values:
+  #  - simple    bs-callout old alert style. Default.
+  #  - modern    bs-callout new (v2-v3) alert style.
+  #  - flat      flat callout style with background.
+  #  - disabled  disable all CSS styles import of note tag.
+  style: flat
+  icons: true
+  border_radius: 3
+  # Offset lighter of background in % for modern and flat styles.
+  light_bg_offset: 0
+
+# ---------------------------------------------------------------
+# Pjax 设置
+# ---------------------------------------------------------------
+pjax: true
+  # 排除特定页面使用 pjax
+  # exclude:
+  #  - /music/
+  #  - /no-pjax/
+
+# ---------------------------------------------------------------
+# 图片懒加载设置
+# ---------------------------------------------------------------
+lazyload: true
