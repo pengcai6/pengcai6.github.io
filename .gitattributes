@@ -1,0 +1,24 @@
+# 设置所有文本文件保持原有换行符格式
+* text=auto
+
+# 明确指定HTML文件使用LF换行符
+*.html text eol=lf
+
+# 明确指定其他文本文件格式
+*.md text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.js text eol=lf
+*.css text eol=lf
+*.json text eol=lf
+
+# 二进制文件不进行换行符转换
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.eot binary
