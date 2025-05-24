@@ -275,3 +275,84 @@ index_layout: 3
 #   # 本地文件路径，请下载到主题文件夹的source目录下
 #   calendar_js: /js/hexo_githubcalendar.js
 #   plus_style: ""
+
+# ===============================================================
+# 博客加速优化配置
+# ===============================================================
+
+# hexo-neat 代码压缩优化
+neat_enable: true
+neat_html:
+  enable: true
+  exclude:
+    - '*.min.html'
+
+neat_css:
+  enable: true
+  exclude:
+    - '*.min.css'
+
+neat_js:
+  enable: true
+  mangle: true
+  output:
+  compress:
+  exclude:
+    - '*.min.js'
+
+# hexo-filter-optimize 静态资源优化
+filter_optimize:
+  enable: true
+  # 压缩HTML
+  html:
+    enable: true
+    exclude:
+      - '**/*.min.html'
+  # 压缩CSS
+  css:
+    enable: true
+    exclude:
+      - '**/*.min.css'
+  # 压缩JS
+  js:
+    enable: true
+    mangle: 
+      toplevel: true
+    output:
+    compress:
+    exclude:
+      - '**/*.min.js'
+  # 优化图片
+  image:
+    enable: true
+    interlaced: false
+    multipass: false
+    optimizationLevel: 2
+    pngquant: false
+    progressive: false
+
+# hexo-filter-nofollow SEO优化 - 外链添加nofollow
+nofollow:
+  enable: true
+  field: post
+  exclude:
+    - 'pengcai6.github.io'
+    - 'github.com/pengcai6'
+
+# hexo-lazyload-image 图片懒加载
+lazyload:
+  enable: true
+  onlypost: false
+  loadingImg: # 可选：loading图片路径
+  isSPA: false
+
+# RSS订阅
+feed:
+  enable: true
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '

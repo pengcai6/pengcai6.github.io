@@ -166,10 +166,35 @@ motion:
   async: false
 
 # ---------------------------------------------------------------
-# CDN 设置 (默认使用本地静态文件)
+# CDN 设置 - 使用免费的jsDelivr CDN加速
 # ---------------------------------------------------------------
 vendors:
-  internal: local
+  # 内部资源，可选值：local, jsdelivr, unpkg, cdnjs
+  # local: 本地文件
+  # jsdelivr: 免费的jsDelivr CDN
+  # unpkg: 免费的unpkg CDN  
+  # cdnjs: 免费的cdnjs CDN
+  internal: jsdelivr
+  
+  # 第三方CDN库
+  # 使用jsDelivr免费CDN加速
+  jquery: https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js
+  velocity: https://cdn.jsdelivr.net/npm/velocity-animate@1/velocity.min.js
+  velocity_ui: https://cdn.jsdelivr.net/npm/velocity-animate@1/velocity.ui.min.js
+  fontawesome: https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css
+  
+# ---------------------------------------------------------------
+# 预加载设置 - 提升页面加载速度
+# ---------------------------------------------------------------
+preload:
+  enable: true
+  rev: //cdn.jsdelivr.net
+  
+# ---------------------------------------------------------------
+# 资源预连接优化
+# ---------------------------------------------------------------
+preconnect:
+  enable: true
 
 # ---------------------------------------------------------------
 # 一些其他设置
@@ -182,9 +207,12 @@ canvas_ribbon:
 typed_posts:
   enable: false
 
-# 加载进度条
+# 加载进度条 - 显示页面加载进度
 pace:
-  enable: false
+  enable: true
+  # 主题样式: big-counter | bounce | barber-shop | center-atom | center-circle
+  # center-radar | center-simple | corner-indicator | fill-left
+  theme: center-simple
 
 # 平滑滚动
 smoothScroll: true
@@ -210,14 +238,14 @@ note:
   # Offset lighter of background in % for modern and flat styles.
   light_bg_offset: 0
 
-# ---------------------------------------------------------------
-# Pjax 设置
-# ---------------------------------------------------------------
-pjax: true
-  # 排除特定页面使用 pjax
-  # exclude:
-  #  - /music/
-  #  - /no-pjax/
+# Pjax 无刷新页面加载 - 大幅提升页面切换速度
+pjax: 
+  enable: true
+  # 排除特定页面使用 pjax（这些页面可能与pjax不兼容）
+  exclude:
+    - /music/
+    - /movies/
+    - /live2d-widget-master/
 
 # ---------------------------------------------------------------
 # 图片懒加载设置
