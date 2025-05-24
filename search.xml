@@ -13,12 +13,6 @@
       </tags>
   </entry>
   <entry>
-    <title>12/4</title>
-    <url>/2023/12/04/12-4/</url>
-    <content><![CDATA[完成hexo基础搭建  1.全局音乐播放器搭建完毕  2.living-2d搭建完毕  3.本地端后台搭建完毕
-]]></content>
-  </entry>
-  <entry>
     <title>12/3随笔</title>
     <url>/2023/12/03/12-3%E9%9A%8F%E7%AC%94/</url>
     <content><![CDATA[
@@ -50,17 +44,15 @@
     <content><![CDATA[public class ID15三数之和 &#123;    public static List&lt;List&lt;Integer&gt;&gt; threeSum(int[] nums) &#123;        List&lt;List&lt;Integer&gt;&gt; res = new ArrayList&lt;&gt;();//        for (int i = 0; i &lt; nums.length; i++) &#123;//            for (int j = i+1; j &lt; nums.length; j++) &#123;//                for (int k = j+1; k &lt; nums.length; k++) &#123;//                    if(nums[i] + nums[j] + nums[k] == 0)&#123;//                        res.add(Arrays.asList(nums[i] , nums[j] , nums[k]));//                    &#125;//                &#125;////            &#125;//        &#125;        Arrays.sort(nums);        for (int i = 0; i &lt; nums.length-2; i++) &#123;            if(i&gt;0&amp;&amp;nums[i]==nums[i-1])continue;            int l=i+1;            int r=nums.length-1;            while (l&lt;r)            &#123;                int sum = nums[i] + nums[l] + nums[r];                if(sum==0) &#123;                    res.add(Arrays.asList(nums[i], nums[l], nums[r]));                    // 去重l和r                    while (l &lt; r &amp;&amp; nums[l] == nums[l + 1]) l++;                    while (l &lt; r &amp;&amp; nums[r] == nums[r - 1]) r--;                    l++;                    r--;                &#125;                else if (sum&lt;0) l++;                else r--;            &#125;        &#125;        return res;    &#125;    public static void main(String[] args) &#123;        List&lt;List&lt;Integer&gt;&gt; lists = threeSum(new int[]&#123;0, 0, 0,0        &#125;);        System.out.println(&quot;lists = &quot; + lists);    &#125;&#125;]]></content>
   </entry>
   <entry>
+    <title>12/4</title>
+    <url>/2023/12/04/12-4/</url>
+    <content><![CDATA[完成hexo基础搭建  1.全局音乐播放器搭建完毕  2.living-2d搭建完毕  3.本地端后台搭建完毕
+]]></content>
+  </entry>
+  <entry>
     <title>2024-2-27-1221-四平方和-二分版本.cpp</title>
     <url>/2024/02/27/2024-2-27-1221-%E5%9B%9B%E5%B9%B3%E6%96%B9%E5%92%8C-%E4%BA%8C%E5%88%86%E7%89%88%E6%9C%AC-cpp/</url>
     <content><![CDATA[2024-2-27-1221-四平方和-二分版本.cpp#include&lt;cstdio&gt;#include&lt;algorithm&gt;#include&lt;cstring&gt;#include&lt;iostream&gt;using namespace std;const int N=2500010;struct sum&#123;    int s,c,d;    bool operator&lt; (const sum &amp;t)const    &#123;        if(s!=t.s)return s&lt;t.s;        if(s!=t.c)return c&lt;t.c;        return d&lt;t.s;    &#125;&#125;sum[N];int n,m;int q[N];int main()    //二分版本&#123;cin&gt;&gt;n;for(int c=0;c*c&lt;=n;c++)    for(int d=c;c*c+d*d&lt;=n;d++)        sum[m++]=&#123;c*c+d*d,c,d&#125;;sort(sum,sum+m);    for(int a=0;a*a&lt;=n;a++)        for(int b=a;b*b+a*a&lt;=n;b++)        &#123;            int t=n-a*a-b*b;            int l=0,r=m;            while(r&gt;l)            &#123;int mid=(r+l)&gt;&gt;1;                if(sum[mid].s&gt;=t)                    r=mid;                else l=mid+1;            &#125;            if(sum[l].s==t)            &#123;                printf(&quot;%d %d %d %d\n&quot;,a,b,sum[l].c,sum[l].d);                return 0;            &#125;        &#125;     return 0;&#125;]]></content>
-      <tags>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>2024-2-27-1227-分巧克力.cpp</title>
-    <url>/2024/02/27/2024-2-27-1227-%E5%88%86%E5%B7%A7%E5%85%8B%E5%8A%9B-cpp/</url>
-    <content><![CDATA[2024-2-27-1227-分巧克力.cpp#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;iostream&gt;#include&lt;algorithm&gt;using namespace std;const int N=100010;int n,k;int h[N],w[N];bool check(int mid)&#123;    int res=0;    for(int i=0;i&lt;n;i++)    &#123;        res+=(h[i]/mid)*(w[i]/mid);if(res&gt;=k) return true;    &#125;    return false;&#125;int main()&#123;    cin&gt;&gt;n&gt;&gt;k;    for(int i=0;i&lt;n;i++)    &#123;        scanf(&quot;%d%d&quot;,&amp;h[i],&amp;w[i]);    &#125;    int l=1,r=1e5;    while(l&lt;r)    &#123;        int mid=(l+r+1)&gt;&gt;1;        if(check(mid)) l=mid;        else r=mid-1;    &#125;    printf(&quot;%d\n&quot;,l);    return 0;&#125;]]></content>
       <tags>
         <tag>算法</tag>
       </tags>
@@ -82,14 +74,6 @@
       </tags>
   </entry>
   <entry>
-    <title>2024-2-27-795-前缀和.cpp</title>
-    <url>/2024/02/27/2024-2-27-795-%E5%89%8D%E7%BC%80%E5%92%8C-cpp/</url>
-    <content><![CDATA[2024-2-27-795-前缀和.cpp#include&lt;cstring&gt;#include&lt;cstdio&gt;#include&lt;iostream&gt;#include&lt;algorithm&gt;using namespace std;const int N=100010;int n,m;int a[N],s[N];int main()&#123;    scanf(&quot;%d%d&quot;,&amp;n,&amp;m);    for(int i=1;i&lt;=n;i++)    &#123;        scanf(&quot;%d&quot;,&amp;a[i]);        s[i]=s[i-1]+a[i];    &#125;    while(m--)    &#123;   int r,l;        scanf(&quot;%d%d&quot;,&amp;l,&amp;r);        printf(&quot;%d\n&quot;,s[r]-s[l-1]);    &#125;    return 0;&#125;]]></content>
-      <tags>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>2024-2-27-796-子矩阵的和.cpp</title>
     <url>/2024/02/27/2024-2-27-796-%E5%AD%90%E7%9F%A9%E9%98%B5%E7%9A%84%E5%92%8C-cpp/</url>
     <content><![CDATA[2024-2-27-796-子矩阵的和.cpp#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;iostream&gt;#include&lt;algorithm&gt;using namespace std;const int N=1005;int a[N][N],s[N][N],ans[N];int n,m,q,x1,x2,y1,y2,z;int main()&#123;scanf(&quot;%d%d%d&quot;,&amp;n,&amp;m,&amp;q);for(int i=1;i&lt;=n;i++)    for(int j=1;j&lt;=m;j++)        &#123;scanf(&quot;%d&quot;,&amp;a[i][j]);    s[i][j]=s[i-1][j]+s[i][j-1]-s[i-1][j-1]+a[i][j];        &#125;while(q--)&#123;scanf(&quot;%d%d%d%d&quot;,&amp;x1,&amp;y1,&amp;x2,&amp;y2);printf(&quot;%d&quot;,s[x2][y2]-s[x2][y1-1]-s[x1-1][y2]+s[x1-1][y1-1]);&#125;    return 0;&#125;]]></content>
@@ -101,6 +85,14 @@
     <title>2024-2-28-1205-买不到的数目.cpp</title>
     <url>/2024/02/29/2024-2-28-1205-%E4%B9%B0%E4%B8%8D%E5%88%B0%E7%9A%84%E6%95%B0%E7%9B%AE-cpp/</url>
     <content><![CDATA[2024-2-28-1205-买不到的数目.cpp#include&lt;iostream&gt;#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;algorithm&gt;using namespace std;int main()&#123;int n,m;cin&gt;&gt;n&gt;&gt;m;cout&lt;&lt;(n-1)*(m-1)-1;    return 0;&#125;]]></content>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2024-2-27-795-前缀和.cpp</title>
+    <url>/2024/02/27/2024-2-27-795-%E5%89%8D%E7%BC%80%E5%92%8C-cpp/</url>
+    <content><![CDATA[2024-2-27-795-前缀和.cpp#include&lt;cstring&gt;#include&lt;cstdio&gt;#include&lt;iostream&gt;#include&lt;algorithm&gt;using namespace std;const int N=100010;int n,m;int a[N],s[N];int main()&#123;    scanf(&quot;%d%d&quot;,&amp;n,&amp;m);    for(int i=1;i&lt;=n;i++)    &#123;        scanf(&quot;%d&quot;,&amp;a[i]);        s[i]=s[i-1]+a[i];    &#125;    while(m--)    &#123;   int r,l;        scanf(&quot;%d%d&quot;,&amp;l,&amp;r);        printf(&quot;%d\n&quot;,s[r]-s[l-1]);    &#125;    return 0;&#125;]]></content>
       <tags>
         <tag>算法</tag>
       </tags>
@@ -122,22 +114,6 @@
       </tags>
   </entry>
   <entry>
-    <title>2024-3-1-1015-摘花生.cpp</title>
-    <url>/2024/03/03/2024-3-1-1015-%E6%91%98%E8%8A%B1%E7%94%9F-cpp/</url>
-    <content><![CDATA[2024-3-1-1015-摘花生.cpp#include&lt;iostream&gt;#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;algorithm&gt;using namespace std;const int N =105;int res;int T,R,C,M[N][N],F[N][N];int main()&#123;cin&gt;&gt;T;while(T--)&#123;scanf(&quot;%d%d&quot;,&amp;R,&amp;C);for(int i=1;i&lt;=R;i++)    for(int j=1;j&lt;=C;j++)        scanf(&quot;%d&quot;,&amp;M[i][j]);for(int i=1;i&lt;=R;i++)    for(int j=1;j&lt;=C;j++)       &#123;F[i][j]=M[i][j];        F[i][j]+=max(F[i-1][j],F[i][j-1]);&#125;cout&lt;&lt;F[R][C]&lt;&lt;endl;&#125;    return 0;&#125;]]></content>
-      <tags>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>2024-2-29-02-01背包问题.cpp</title>
-    <url>/2024/02/29/2024-2-29-02-01%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98-cpp/</url>
-    <content><![CDATA[2024-2-29-02-01背包问题.cpp#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;algorithm&gt;using namespace std;const int N=1005;int n,m;int v[N],w[N];int f[N][N];int main()&#123;    cin&gt;&gt;n&gt;&gt;m;    for(int i=1;i&lt;=n;i++) scanf(&quot;%d%d&quot;,&amp;v[i],&amp;w[i]);    for(int i=1;i&lt;=n;i++)        for(int j=1;j&lt;=m;j++)        &#123;f[i][j]=f[i-1][j];        if(j&gt;=v[i]) f[i][j]=max(f[i][j],f[i-1][j-v[i]]+w[i]);        &#125;printf(&quot;%d\n&quot;,f[n][m]);return 0;&#125;]]></content>
-      <tags>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>2024-2-28-99-激光炸弹.cpp</title>
     <url>/2024/02/28/2024-2-28-99-%E6%BF%80%E5%85%89%E7%82%B8%E5%BC%B9-cpp/</url>
     <content><![CDATA[2024-2-28-99-激光炸弹.cpp#include&lt;iostream&gt;#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;algorithm&gt;using namespace std;const int N=5010;int n,m; int cnt,r; int s[N][N];int main() &#123; cin&gt;&gt;cnt&gt;&gt;r; r=min(5001,r); n=m=r;while(cnt--)&#123;    int x,y,w;    cin&gt;&gt;x&gt;&gt;y&gt;&gt;w;    x++,y++;    n=max(n,x),m=max(m,y);    s[x][y]+=w;&#125;for(int i=1;i&lt;=n;i++)    for(int j=1;j&lt;=m;j++)        s[i][j]+=s[i-1][j]+s[i][j-1]-s[i-1][j-1];//二维前缀和int res=0;for(int i=r;i&lt;=n;i++)    for(int j=r;j&lt;=m;j++)        res=max(res,s[i][j]-s[i-r][j]-s[i][j-r]+s[i-r][j-r]); //计算滑动窗口中的最大值cout&lt;&lt;res&lt;&lt;endl;return 0;&#125;]]></content>
@@ -154,25 +130,33 @@
       </tags>
   </entry>
   <entry>
+    <title>2024-3-1-1015-摘花生.cpp</title>
+    <url>/2024/03/03/2024-3-1-1015-%E6%91%98%E8%8A%B1%E7%94%9F-cpp/</url>
+    <content><![CDATA[2024-3-1-1015-摘花生.cpp#include&lt;iostream&gt;#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;algorithm&gt;using namespace std;const int N =105;int res;int T,R,C,M[N][N],F[N][N];int main()&#123;cin&gt;&gt;T;while(T--)&#123;scanf(&quot;%d%d&quot;,&amp;R,&amp;C);for(int i=1;i&lt;=R;i++)    for(int j=1;j&lt;=C;j++)        scanf(&quot;%d&quot;,&amp;M[i][j]);for(int i=1;i&lt;=R;i++)    for(int j=1;j&lt;=C;j++)       &#123;F[i][j]=M[i][j];        F[i][j]+=max(F[i-1][j],F[i][j-1]);&#125;cout&lt;&lt;F[R][C]&lt;&lt;endl;&#125;    return 0;&#125;]]></content>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2024-2-27-1227-分巧克力.cpp</title>
+    <url>/2024/02/27/2024-2-27-1227-%E5%88%86%E5%B7%A7%E5%85%8B%E5%8A%9B-cpp/</url>
+    <content><![CDATA[2024-2-27-1227-分巧克力.cpp#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;iostream&gt;#include&lt;algorithm&gt;using namespace std;const int N=100010;int n,k;int h[N],w[N];bool check(int mid)&#123;    int res=0;    for(int i=0;i&lt;n;i++)    &#123;        res+=(h[i]/mid)*(w[i]/mid);if(res&gt;=k) return true;    &#125;    return false;&#125;int main()&#123;    cin&gt;&gt;n&gt;&gt;k;    for(int i=0;i&lt;n;i++)    &#123;        scanf(&quot;%d%d&quot;,&amp;h[i],&amp;w[i]);    &#125;    int l=1,r=1e5;    while(l&lt;r)    &#123;        int mid=(l+r+1)&gt;&gt;1;        if(check(mid)) l=mid;        else r=mid-1;    &#125;    printf(&quot;%d\n&quot;,l);    return 0;&#125;]]></content>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2024-2-29-02-01背包问题.cpp</title>
+    <url>/2024/02/29/2024-2-29-02-01%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98-cpp/</url>
+    <content><![CDATA[2024-2-29-02-01背包问题.cpp#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;algorithm&gt;using namespace std;const int N=1005;int n,m;int v[N],w[N];int f[N][N];int main()&#123;    cin&gt;&gt;n&gt;&gt;m;    for(int i=1;i&lt;=n;i++) scanf(&quot;%d%d&quot;,&amp;v[i],&amp;w[i]);    for(int i=1;i&lt;=n;i++)        for(int j=1;j&lt;=m;j++)        &#123;f[i][j]=f[i-1][j];        if(j&gt;=v[i]) f[i][j]=max(f[i][j],f[i-1][j-v[i]]+w[i]);        &#125;printf(&quot;%d\n&quot;,f[n][m]);return 0;&#125;]]></content>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>2024-3-1-1212- 地宫取宝.cpp</title>
     <url>/2024/03/03/2024-3-1-1212-%E5%9C%B0%E5%AE%AB%E5%8F%96%E5%AE%9D-cpp/</url>
     <content><![CDATA[2024-3-1-1212- 地宫取宝.cpp#include &lt;iostream&gt;#include &lt;cstring&gt;#include &lt;algorithm&gt;#include &lt;cstdio&gt;using namespace std;const int N = 55;int MOD=1000000007;int n,m,k;int w[N][N];int f[N][N][13][14];int main()&#123;    cin&gt;&gt;n&gt;&gt;m&gt;&gt;k;    for(int i=1;i&lt;=n;i++)        for(int j=1;j&lt;=m;j++)        &#123;            cin&gt;&gt;w[i][j];            w[i][j]++;        &#125;    f[1][1][1][w[1][1]]=1;    f[1][1][0][0]=1;    for(int i = 1; i &lt;= n; i ++ )        for(int j= 1; j &lt;= m; j ++ )        &#123;if(i==1||j==1) continue;        for(int u = 0;u&lt;= k; u ++ )        for(int v = 0; v &lt;= 13; v ++ )        &#123;            int &amp;val=f[i][j][u][v];            val=(val+f[i-1][j][u][v])%MOD;            val=(val+f[i][j-1][u][v])%MOD;            if(u&gt;0&amp;&amp;v==w[i][j])            &#123;                for(int c=0;c&lt;v;c++)                &#123;                    val=(val+f[i-1][j][u-1][c])%MOD;                    val=(val+f[i][j-1][u-1][c]%MOD);                &#125;            &#125;        &#125;        &#125;        int res=0;        for (int i = 0; i &lt; 13; i ++ ) res=(res+f[n][m][k][i])%MOD;        cout&lt;&lt;res;    return 0;&#125;]]></content>
-      <tags>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>2024-3-1-895-最长上升子序列.cpp</title>
-    <url>/2024/03/03/2024-3-1-895-%E6%9C%80%E9%95%BF%E4%B8%8A%E5%8D%87%E5%AD%90%E5%BA%8F%E5%88%97-cpp/</url>
-    <content><![CDATA[2024-3-1-895-最长上升子序列.cpp#include&lt;iostream&gt;#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;algorithm&gt;using namespace std;const int N=5005;int a[N],f[N];int n;int main()&#123;    cin&gt;&gt;n;for(int i=1;i&lt;=n;i++) scanf(&quot;%d&quot;,&amp;a[i]);    int res=0;for(int i=1;i&lt;=n;i++)&#123;   f[i]=1;    for(int j=1;j&lt;i;j++)    &#123;        if(a[i]&gt;a[j])            f[i]=max(f[i],f[j]+1);        res=max(res,f[i]);    &#125;&#125;cout&lt;&lt;res;    return 0;&#125;]]></content>
-      <tags>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>2024-3-2-1214-波动数列.cpp</title>
-    <url>/2024/03/03/2024-3-2-1214-%E6%B3%A2%E5%8A%A8%E6%95%B0%E5%88%97-cpp/</url>
-    <content><![CDATA[2024-3-2-1214-波动数列.cpp#include &lt;iostream&gt;#include &lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;algorithm&gt;using namespace std;const int N=1010,MOD=100000007;int f[N][N];int n,s,a,b;int get_mod(int a,int b)&#123;    return (a%b+b)%b;&#125;int main()&#123; scanf(&quot;%d%d%d%d&quot;, &amp;n, &amp;s, &amp;a, &amp;b);f[0][0]=1;for(int i=1;i&lt;n;i++)    for(int j=0;j&lt;n;j++)    &#123;//注意，f[i][j] 代表第i位，取i个a或-b，模n为j的个数；f[i][j]=(f[i-1][get_mod(j-a*(n-i),n)]+f[i-1][get_mod(j+b*(n-i),n)])%MOD;//题解https://www.cnblogs.com/onlyblues/p/15907623.html    &#125;     cout&lt;&lt;f[n-1][get_mod(s,n)]&lt;&lt;endl;    return 0;&#125;]]></content>
       <tags>
         <tag>算法</tag>
       </tags>
@@ -186,17 +170,17 @@
       </tags>
   </entry>
   <entry>
-    <title>2024-3-2-1236-递增三元组.cpp</title>
-    <url>/2024/03/03/2024-3-2-1236-%E9%80%92%E5%A2%9E%E4%B8%89%E5%85%83%E7%BB%84-cpp/</url>
-    <content><![CDATA[2024-3-2-1236-递增三元组.cpp#include &lt;iostream&gt;#include &lt;cstring&gt;#include &lt;algorithm&gt;#include&lt;cstdio&gt;using namespace std;const int N = 100010;int cnt[N],as[N],cs[N];//as[i]表示在a[]中有多少数小于b[i]int a[N],b[N],c[N],s[N],n;//cs[i]表示在c[]中有多少数大于b[i]int main()&#123;   cin&gt;&gt;n;    for (int i = 0; i &lt; n; i ++ ) scanf(&quot;%d&quot;, &amp;a[i]),a[i]++;    for (int i = 0; i &lt; n; i ++ ) scanf(&quot;%d&quot;, &amp;b[i]),b[i]++;    for (int i = 0; i &lt; n; i ++ ) scanf(&quot;%d&quot;, &amp;c[i]),c[i]++;    for(int i=0;i&lt;n;i++)cnt[a[i]]++;    for (int i = 1; i &lt;N; i ++ )s[i]=s[i-1]+cnt[i];    for (int i = 0; i &lt; n; i ++ ) as[i]=s[b[i]-1];    //求cs[]    memset(cnt, 0, sizeof cnt);memset(s,0,sizeof s);    for(int i=0;i&lt;n;i++)cnt[c[i]]++;    for(int i=1;i&lt;N;i++)s[i]=s[i-1]+cnt[i];    for(int i=0;i&lt;n;i++)cs[i]=s[N-1]-s[b[i]];    long long res=0;    for(int i=0;i&lt;n;i++) res+=(long long)as[i]*cs[i];/*错误实例res+=    (long long)(as[i]*cs[i]);不需要加括号*/    cout&lt;&lt;res&lt;&lt;endl;    return 0;&#125;]]></content>
+    <title>2024-3-2-1214-波动数列.cpp</title>
+    <url>/2024/03/03/2024-3-2-1214-%E6%B3%A2%E5%8A%A8%E6%95%B0%E5%88%97-cpp/</url>
+    <content><![CDATA[2024-3-2-1214-波动数列.cpp#include &lt;iostream&gt;#include &lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;algorithm&gt;using namespace std;const int N=1010,MOD=100000007;int f[N][N];int n,s,a,b;int get_mod(int a,int b)&#123;    return (a%b+b)%b;&#125;int main()&#123; scanf(&quot;%d%d%d%d&quot;, &amp;n, &amp;s, &amp;a, &amp;b);f[0][0]=1;for(int i=1;i&lt;n;i++)    for(int j=0;j&lt;n;j++)    &#123;//注意，f[i][j] 代表第i位，取i个a或-b，模n为j的个数；f[i][j]=(f[i-1][get_mod(j-a*(n-i),n)]+f[i-1][get_mod(j+b*(n-i),n)])%MOD;//题解https://www.cnblogs.com/onlyblues/p/15907623.html    &#125;     cout&lt;&lt;f[n-1][get_mod(s,n)]&lt;&lt;endl;    return 0;&#125;]]></content>
       <tags>
         <tag>算法</tag>
       </tags>
   </entry>
   <entry>
-    <title>2024-3-2-4262-空调.cpp</title>
-    <url>/2024/03/03/2024-3-2-4262-%E7%A9%BA%E8%B0%83-cpp/</url>
-    <content><![CDATA[2024-3-2-4262-空调.cpp#include &lt;cstring&gt;#include &lt;algorithm&gt;#include&lt;cstdio&gt;const int N = 1e5+10;int a[N],b[N];int n;using namespace std;void batch_add(int l,int r,int c)&#123;//创建差分数组    b[l]+=c,b[r+1]-=c;    cout&lt;&lt;b[l]&lt;&lt;&quot; &quot;&lt;&lt;b[r+1]&lt;&lt;endl;&#125;int main()&#123;    cin&gt;&gt;n;    for(int i=1;i&lt;=n;i++) cin&gt;&gt;a[i];    for(int i=1;i&lt;=n;i++)&#123;        int t;cin&gt;&gt;t;        a[i]-=t;    &#125;    for(int i=1;i&lt;=n;i++)batch_add(i,i,a[i]);    int s=0,t=0;    for(int i=1;i&lt;=n;i++)&#123;        if(b[i]&gt;0)s+=b[i];        else if(b[i]&lt;0)t-=b[i];    &#125;cout&lt;&lt;max(s,t);    return 0;&#125;]]></content>
+    <title>2024-3-1-895-最长上升子序列.cpp</title>
+    <url>/2024/03/03/2024-3-1-895-%E6%9C%80%E9%95%BF%E4%B8%8A%E5%8D%87%E5%AD%90%E5%BA%8F%E5%88%97-cpp/</url>
+    <content><![CDATA[2024-3-1-895-最长上升子序列.cpp#include&lt;iostream&gt;#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;algorithm&gt;using namespace std;const int N=5005;int a[N],f[N];int n;int main()&#123;    cin&gt;&gt;n;for(int i=1;i&lt;=n;i++) scanf(&quot;%d&quot;,&amp;a[i]);    int res=0;for(int i=1;i&lt;=n;i++)&#123;   f[i]=1;    for(int j=1;j&lt;i;j++)    &#123;        if(a[i]&gt;a[j])            f[i]=max(f[i],f[j]+1);        res=max(res,f[i]);    &#125;&#125;cout&lt;&lt;res;    return 0;&#125;]]></content>
       <tags>
         <tag>算法</tag>
       </tags>
@@ -210,10 +194,26 @@
       </tags>
   </entry>
   <entry>
+    <title>2024-3-2-4262-空调.cpp</title>
+    <url>/2024/03/03/2024-3-2-4262-%E7%A9%BA%E8%B0%83-cpp/</url>
+    <content><![CDATA[2024-3-2-4262-空调.cpp#include &lt;cstring&gt;#include &lt;algorithm&gt;#include&lt;cstdio&gt;const int N = 1e5+10;int a[N],b[N];int n;using namespace std;void batch_add(int l,int r,int c)&#123;//创建差分数组    b[l]+=c,b[r+1]-=c;    cout&lt;&lt;b[l]&lt;&lt;&quot; &quot;&lt;&lt;b[r+1]&lt;&lt;endl;&#125;int main()&#123;    cin&gt;&gt;n;    for(int i=1;i&lt;=n;i++) cin&gt;&gt;a[i];    for(int i=1;i&lt;=n;i++)&#123;        int t;cin&gt;&gt;t;        a[i]-=t;    &#125;    for(int i=1;i&lt;=n;i++)batch_add(i,i,a[i]);    int s=0,t=0;    for(int i=1;i&lt;=n;i++)&#123;        if(b[i]&gt;0)s+=b[i];        else if(b[i]&lt;0)t-=b[i];    &#125;cout&lt;&lt;max(s,t);    return 0;&#125;]]></content>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>2024-3-21</title>
     <url>/2024/03/21/2024-3-21/</url>
     <content><![CDATA[
 ]]></content>
+  </entry>
+  <entry>
+    <title>2024-3-3-1245- 特别数的和.cpp</title>
+    <url>/2024/03/04/2024-3-3-1245-%E7%89%B9%E5%88%AB%E6%95%B0%E7%9A%84%E5%92%8C-cpp/</url>
+    <content><![CDATA[2024-3-3-1245- 特别数的和.cpp#include &lt;iostream&gt;#include &lt;cstring&gt;#include &lt;algorithm&gt;#include&lt;cstdio&gt;int n,res;using namespace std;int main()&#123;    cin&gt;&gt;n;    for(int i=1;i&lt;=n;i++)    &#123;int j=i;        while(j)        &#123;            int cnt=j%10;            j=j/10;            if(cnt==2||cnt==0||cnt==1||cnt==9)            &#123;res+=i;break;&#125;        &#125;    &#125;    cout&lt;&lt;res;    return 0;&#125;]]></content>
+      <tags>
+        <tag>算法</tag>
+      </tags>
   </entry>
   <entry>
     <title>2024-3-3-1204- 错误票据.cpp</title>
@@ -224,9 +224,9 @@
       </tags>
   </entry>
   <entry>
-    <title>2024-3-3-1245- 特别数的和.cpp</title>
-    <url>/2024/03/04/2024-3-3-1245-%E7%89%B9%E5%88%AB%E6%95%B0%E7%9A%84%E5%92%8C-cpp/</url>
-    <content><![CDATA[2024-3-3-1245- 特别数的和.cpp#include &lt;iostream&gt;#include &lt;cstring&gt;#include &lt;algorithm&gt;#include&lt;cstdio&gt;int n,res;using namespace std;int main()&#123;    cin&gt;&gt;n;    for(int i=1;i&lt;=n;i++)    &#123;int j=i;        while(j)        &#123;            int cnt=j%10;            j=j/10;            if(cnt==2||cnt==0||cnt==1||cnt==9)            &#123;res+=i;break;&#125;        &#125;    &#125;    cout&lt;&lt;res;    return 0;&#125;]]></content>
+    <title>2024-3-3-466-回文日期.cpp</title>
+    <url>/2024/03/04/2024-3-3-466-%E5%9B%9E%E6%96%87%E6%97%A5%E6%9C%9F-cpp/</url>
+    <content><![CDATA[2024-3-3-466-回文日期.cpp#include &lt;iostream&gt;#include &lt;sstream&gt;#include &lt;algorithm&gt;using namespace std;const int N = 10010;int day1,day2,res,days[13]=&#123;0,31,28,31,30,31,30,31,31,30,31,30,31&#125;;bool check(int date)&#123;int year=date/10000;int mouth=date%10000/100;int day=date%100;if(mouth==0||mouth&gt;12)return false;if(day==0||mouth!=2&amp;&amp;day&gt;days[mouth]) return false;int leap=year%100&amp;&amp;year%4==0||year%400==0;//注意闰年判断条件if(mouth==2)&#123;if(day&gt;28+leap) return false;&#125;return true;&#125;int main()&#123;    cin&gt;&gt;day1&gt;&gt;day2;    int rea=0;    for(int i=1000;i&lt;10000;i++)    &#123;        int date=i,x=i;        for(int j=0;j&lt;4;j++)            date=date*10+x%10,x/=10;        if(day1&lt;=date&amp;&amp;day2&gt;=date&amp;&amp;check(date))res++;    &#125;    cout&lt;&lt;res;    return 0;&#125;]]></content>
       <tags>
         <tag>算法</tag>
       </tags>
@@ -238,14 +238,6 @@
       <tags>
         <tag>算法</tag>
         <tag>距离</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>2024-3-3-466-回文日期.cpp</title>
-    <url>/2024/03/04/2024-3-3-466-%E5%9B%9E%E6%96%87%E6%97%A5%E6%9C%9F-cpp/</url>
-    <content><![CDATA[2024-3-3-466-回文日期.cpp#include &lt;iostream&gt;#include &lt;sstream&gt;#include &lt;algorithm&gt;using namespace std;const int N = 10010;int day1,day2,res,days[13]=&#123;0,31,28,31,30,31,30,31,31,30,31,30,31&#125;;bool check(int date)&#123;int year=date/10000;int mouth=date%10000/100;int day=date%100;if(mouth==0||mouth&gt;12)return false;if(day==0||mouth!=2&amp;&amp;day&gt;days[mouth]) return false;int leap=year%100&amp;&amp;year%4==0||year%400==0;//注意闰年判断条件if(mouth==2)&#123;if(day&gt;28+leap) return false;&#125;return true;&#125;int main()&#123;    cin&gt;&gt;day1&gt;&gt;day2;    int rea=0;    for(int i=1000;i&lt;10000;i++)    &#123;        int date=i,x=i;        for(int j=0;j&lt;4;j++)            date=date*10+x%10,x/=10;        if(day1&lt;=date&amp;&amp;day2&gt;=date&amp;&amp;check(date))res++;    &#125;    cout&lt;&lt;res;    return 0;&#125;]]></content>
-      <tags>
-        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -311,18 +303,18 @@ int main()
 ]]></content>
   </entry>
   <entry>
+    <title>2025-5-24</title>
+    <url>/2025/05/24/2025-5-24/</url>
+    <content><![CDATA[又是好吃的一天今天小张发给我很多好吃的，我很开心。什么时候才能再次吃到小张做的美食呢？很好奇知了猴的味道。
+]]></content>
+  </entry>
+  <entry>
     <title>2024-6-20随笔</title>
     <url>/2024/06/20/2024-6-20%E9%9A%8F%E7%AC%94/</url>
     <content><![CDATA[学习有感学习三角
 学习加深方式便是练习与交流想法
 
 
-]]></content>
-  </entry>
-  <entry>
-    <title>2025-5-24</title>
-    <url>/2025/05/24/2025-5-24/</url>
-    <content><![CDATA[又是好吃的一天今天小张发给我很多好吃的，我很开心。什么时候才能再次吃到小张做的美食呢？很好奇知了猴的味道。
 ]]></content>
   </entry>
   <entry>
@@ -337,12 +329,48 @@ int main()
       </tags>
   </entry>
   <entry>
+    <title>Hexo备份事项</title>
+    <url>/2023/12/03/Hexo%E5%A4%87%E4%BB%BD%E4%BA%8B%E9%A1%B9/</url>
+    <content><![CDATA[由于每次更新后都要输入大量命令行十分麻烦，遂创建一键部署脚本方便备份部署在博客根目录下创建deploy.sh文件，写入
+echo &quot;Start&quot;git add .git commit -m backupgit pushhexo ghexo decho &quot;Finish&quot;echo 按任意键继续read -n 1
+
+保存后，在博客根目录双击执行或用命令.&#x2F;deploy.sh 即可实现博客的一键备份并部署
+恢复博客基础环境搭建Hexo博客基础环境已经搭好：比如安装npm、git、nodejs、hexo安装…
+克隆项目到本地Ctrl+Alt+T打开终端，输入
+git clone git@gitee.com:stringwind/blog_backup.git
+
+
+git clone 自己的仓库地址
+恢复博客在clone来的文件夹里执行
+npm install hexo-clinpm installnpm install hexo-deployer-git
+&#x3D;&#x3D;注意由于主题未备份，需要进入站源文件修改主题为默认主题才可恢复&#x3D;&#x3D;这样博客源文件就成功移植了，再用hexo clean、hexo g、hexo d即可部署完成
+]]></content>
+  </entry>
+  <entry>
     <title>33. 搜索旋转排序数组</title>
     <url>/2025/01/21/33-%E6%90%9C%E7%B4%A2%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84/</url>
     <content><![CDATA[33. 搜索旋转排序数组[4,5,6,&#x37;,&#x20;&#x20;    0,1,2]
 将数组一分为二，其中一定有一个是有序的，另一个可能是有序，也能是部分有序。 此时有序部分用二分法查找。无序部分再一分为二，其中一个一定有序，另一个可能有序，可能无序。就这样循环.
 
 判断条件可以由该图得出package leetcode.editor.cn.mycode.ID33;import java.util.Arrays;public class 搜索旋转排序数组 &#123;    class Solution &#123;        public int search(int[] nums, int target) &#123;            int n = nums.length;            int l=0,r=n-1;            while (l&lt;=r)            &#123;                     int mid=(l+r)/2;                if(nums[mid]==target)&#123;                    return mid;                &#125;                //如果左边为有序                if(nums[l]&lt;=nums[mid])                &#123;                    //利用左边有序判断是否在左边                    if(nums[l]&lt;=target&amp;&amp;nums[mid]&gt;target)                    &#123;                       r=mid-1;                    &#125;                    else  l=mid+1;                &#125;                else //右边有序                &#123;                    //利用左边有序判断是否在左边                    if (nums[mid] &lt; target &amp;&amp; nums[r] &gt;= target) &#123;                        l = mid + 1;                    &#125; else r = mid - 1;                &#125;            &#125;            return -1;        &#125;    &#125;&#125;
+]]></content>
+  </entry>
+  <entry>
+    <title>My lover</title>
+    <url>/2023/12/03/My-lover/</url>
+    <content><![CDATA[my lover
+]]></content>
+  </entry>
+  <entry>
+    <title>Java中reflect的学习</title>
+    <url>/2024/05/13/Java%E4%B8%ADreflect%E7%9A%84%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[package reflect;import reflect.entity.Employee;public class ClassSample &#123;    public static void main(String[] args) &#123;        try &#123;            Class emplyeeClass = Class.forName(&quot;reflect.entity.Employee&quot;);//返回具有指定名称的类对象            System.out.println(&quot;已被加载&quot;);            Employee emp = (Employee) emplyeeClass.newInstance();//使用类对象生成对象            System.out.println(emp);        &#125; catch (ClassNotFoundException e) &#123;            throw new RuntimeException(e);//类名与类路径错误        &#125; catch (InstantiationException e) &#123;            throw new RuntimeException(e);//实例化异常，例如抽象类无法被实例化        &#125; catch (IllegalAccessException e) &#123;            throw new RuntimeException(e);//权限不足，作用域外             &#125;        &#125;    &#125;
+]]></content>
+  </entry>
+  <entry>
+    <title>idea踩坑</title>
+    <url>/2024/09/08/idea%E8%B8%A9%E5%9D%91/</url>
+    <content><![CDATA[idae踩坑需要在这里将java设置与项目相同，否则无法打包
 ]]></content>
   </entry>
   <entry>
@@ -373,42 +401,6 @@ git merge &lt;branch&gt;在这两种情况下，git 都会尝试去自动合并�
 ]]></content>
   </entry>
   <entry>
-    <title>My lover</title>
-    <url>/2023/12/03/My-lover/</url>
-    <content><![CDATA[my lover
-]]></content>
-  </entry>
-  <entry>
-    <title>Hexo备份事项</title>
-    <url>/2023/12/03/Hexo%E5%A4%87%E4%BB%BD%E4%BA%8B%E9%A1%B9/</url>
-    <content><![CDATA[由于每次更新后都要输入大量命令行十分麻烦，遂创建一键部署脚本方便备份部署在博客根目录下创建deploy.sh文件，写入
-echo &quot;Start&quot;git add .git commit -m backupgit pushhexo ghexo decho &quot;Finish&quot;echo 按任意键继续read -n 1
-
-保存后，在博客根目录双击执行或用命令.&#x2F;deploy.sh 即可实现博客的一键备份并部署
-恢复博客基础环境搭建Hexo博客基础环境已经搭好：比如安装npm、git、nodejs、hexo安装…
-克隆项目到本地Ctrl+Alt+T打开终端，输入
-git clone git@gitee.com:stringwind/blog_backup.git
-
-
-git clone 自己的仓库地址
-恢复博客在clone来的文件夹里执行
-npm install hexo-clinpm installnpm install hexo-deployer-git
-&#x3D;&#x3D;注意由于主题未备份，需要进入站源文件修改主题为默认主题才可恢复&#x3D;&#x3D;这样博客源文件就成功移植了，再用hexo clean、hexo g、hexo d即可部署完成
-]]></content>
-  </entry>
-  <entry>
-    <title>Java中reflect的学习</title>
-    <url>/2024/05/13/Java%E4%B8%ADreflect%E7%9A%84%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[package reflect;import reflect.entity.Employee;public class ClassSample &#123;    public static void main(String[] args) &#123;        try &#123;            Class emplyeeClass = Class.forName(&quot;reflect.entity.Employee&quot;);//返回具有指定名称的类对象            System.out.println(&quot;已被加载&quot;);            Employee emp = (Employee) emplyeeClass.newInstance();//使用类对象生成对象            System.out.println(emp);        &#125; catch (ClassNotFoundException e) &#123;            throw new RuntimeException(e);//类名与类路径错误        &#125; catch (InstantiationException e) &#123;            throw new RuntimeException(e);//实例化异常，例如抽象类无法被实例化        &#125; catch (IllegalAccessException e) &#123;            throw new RuntimeException(e);//权限不足，作用域外             &#125;        &#125;    &#125;
-]]></content>
-  </entry>
-  <entry>
-    <title>idea踩坑</title>
-    <url>/2024/09/08/idea%E8%B8%A9%E5%9D%91/</url>
-    <content><![CDATA[idae踩坑需要在这里将java设置与项目相同，否则无法打包
-]]></content>
-  </entry>
-  <entry>
     <title>java动态代理的学习</title>
     <url>/2025/01/19/java%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86%E7%9A%84%E5%AD%A6%E4%B9%A0/</url>
     <content><![CDATA[java动态代理的学习
@@ -425,12 +417,11 @@ npm install hexo-clinpm installnpm install hexo-deployer-git
       </tags>
   </entry>
   <entry>
-    <title>openGl配置</title>
-    <url>/2024/09/23/openGl%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[注意配置
-]]></content>
+    <title>2024-3-2-1236-递增三元组.cpp</title>
+    <url>/2024/03/03/2024-3-2-1236-%E9%80%92%E5%A2%9E%E4%B8%89%E5%85%83%E7%BB%84-cpp/</url>
+    <content><![CDATA[2024-3-2-1236-递增三元组.cpp#include &lt;iostream&gt;#include &lt;cstring&gt;#include &lt;algorithm&gt;#include&lt;cstdio&gt;using namespace std;const int N = 100010;int cnt[N],as[N],cs[N];//as[i]表示在a[]中有多少数小于b[i]int a[N],b[N],c[N],s[N],n;//cs[i]表示在c[]中有多少数大于b[i]int main()&#123;   cin&gt;&gt;n;    for (int i = 0; i &lt; n; i ++ ) scanf(&quot;%d&quot;, &amp;a[i]),a[i]++;    for (int i = 0; i &lt; n; i ++ ) scanf(&quot;%d&quot;, &amp;b[i]),b[i]++;    for (int i = 0; i &lt; n; i ++ ) scanf(&quot;%d&quot;, &amp;c[i]),c[i]++;    for(int i=0;i&lt;n;i++)cnt[a[i]]++;    for (int i = 1; i &lt;N; i ++ )s[i]=s[i-1]+cnt[i];    for (int i = 0; i &lt; n; i ++ ) as[i]=s[b[i]-1];    //求cs[]    memset(cnt, 0, sizeof cnt);memset(s,0,sizeof s);    for(int i=0;i&lt;n;i++)cnt[c[i]]++;    for(int i=1;i&lt;N;i++)s[i]=s[i-1]+cnt[i];    for(int i=0;i&lt;n;i++)cs[i]=s[N-1]-s[b[i]];    long long res=0;    for(int i=0;i&lt;n;i++) res+=(long long)as[i]*cs[i];/*错误实例res+=    (long long)(as[i]*cs[i]);不需要加括号*/    cout&lt;&lt;res&lt;&lt;endl;    return 0;&#125;]]></content>
       <tags>
-        <tag>openGl</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -459,6 +450,24 @@ npm install hexo-clinpm installnpm install hexo-deployer-git
 ]]></content>
   </entry>
   <entry>
+    <title>openGl配置</title>
+    <url>/2024/09/23/openGl%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[注意配置
+]]></content>
+      <tags>
+        <tag>openGl</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>在hexo中插入音乐</title>
+    <url>/2023/12/04/%E5%9C%A8hexo%E4%B8%AD%E6%8F%92%E5%85%A5%E9%9F%B3%E4%B9%90/</url>
+    <content><![CDATA[链接
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+  </entry>
+  <entry>
     <title>友链新增</title>
     <url>/2025/01/19/%E5%8F%8B%E9%93%BE%E6%96%B0%E5%A2%9E/</url>
     <content><![CDATA[完善友链使用图床上传好友的logo 并且配置
@@ -471,22 +480,6 @@ npm install hexo-clinpm installnpm install hexo-deployer-git
       </tags>
   </entry>
   <entry>
-    <title>完成-Hexo-Butterfly主题在主页添加GitHub贡献日历</title>
-    <url>/2025/01/19/%E5%AE%8C%E6%88%90-Hexo-Butterfly%E4%B8%BB%E9%A2%98%E5%9C%A8%E4%B8%BB%E9%A1%B5%E6%B7%BB%E5%8A%A0GitHub%E8%B4%A1%E7%8C%AE%E6%97%A5%E5%8E%86/</url>
-    <content><![CDATA[重要配置 user: pengcai6 #git用户名  apiurl: ‘https://github-contribute-plum.vercel.app‘   #该网站使用vercel搭建  minheight:  
-目前只在我的关于中展示
-]]></content>
-  </entry>
-  <entry>
-    <title>在hexo中插入音乐</title>
-    <url>/2023/12/04/%E5%9C%A8hexo%E4%B8%AD%E6%8F%92%E5%85%A5%E9%9F%B3%E4%B9%90/</url>
-    <content><![CDATA[链接
-]]></content>
-      <categories>
-        <category>教程</category>
-      </categories>
-  </entry>
-  <entry>
     <title>实现向上取整</title>
     <url>/2024/02/29/%E5%AE%9E%E7%8E%B0%E5%90%91%E4%B8%8A%E5%8F%96%E6%95%B4/</url>
     <content><![CDATA[公式 *** a&#x2F;b,向上取整位（a+b-1）&#x2F;b ***
@@ -496,6 +489,13 @@ npm install hexo-clinpm installnpm install hexo-deployer-git
     <title>时间冉冉</title>
     <url>/2024/05/09/%E6%97%B6%E9%97%B4%E5%86%89%E5%86%89/</url>
     <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>完成-Hexo-Butterfly主题在主页添加GitHub贡献日历</title>
+    <url>/2025/01/19/%E5%AE%8C%E6%88%90-Hexo-Butterfly%E4%B8%BB%E9%A2%98%E5%9C%A8%E4%B8%BB%E9%A1%B5%E6%B7%BB%E5%8A%A0GitHub%E8%B4%A1%E7%8C%AE%E6%97%A5%E5%8E%86/</url>
+    <content><![CDATA[重要配置 user: pengcai6 #git用户名  apiurl: ‘https://github-contribute-plum.vercel.app‘   #该网站使用vercel搭建  minheight:  
+目前只在我的关于中展示
+]]></content>
   </entry>
   <entry>
     <title>测试使用qexo进行发布</title>
@@ -542,9 +542,10 @@ col3
 ]]></content>
   </entry>
   <entry>
-    <title>算法竞赛入门经典3-2</title>
-    <url>/2023/12/03/%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B%E5%85%A5%E9%97%A8%E7%BB%8F%E5%85%B83-2/</url>
-    <content><![CDATA[算法竞赛入门经典3-22023-12-02 10:35 /*** *                    _ooOoo_ *                   o8888888o *                   88&quot; . &quot;88 *                   (| -_- |) *                    O\ = /O *                ____/`---&#x27;\____ *              .   &#x27; \\| |// `. *               / \\||| : |||// \ *             / _||||| -:- |||||- \ *               | | \\\ - /// | | *             | \_| &#x27;&#x27;\---/&#x27;&#x27; | | *              \ .-\__ `-` ___/-. / *           ___`. .&#x27; /--.--\ `. . __ *        .&quot;&quot; &#x27;&lt; `.___\_&lt;|&gt;_/___.&#x27; &gt;&#x27;&quot;&quot;. *       | | : `- \`.;`\ _ /`;.`/ - ` : | | *         \ \ `-. \_ __\ /__ _/ .-` / / * ======`-.____`-.___\_____/___.-`____.-&#x27;====== *                    `=---=&#x27; * * ............................................. *          佛祖保佑             永无BUG *//*** * http://www.flvcd.com/ *  .--,       .--, * ( (  \.---./  ) ) *  &#x27;.__/o   o\__.&#x27; *     &#123;=  ^  =&#125; *      &gt;  -  &lt; *     /       \ *    //       \\ *   //|   .   |\\ *   &quot;&#x27;\       /&#x27;&quot;_.-~^`&#x27;-. *      \  _  /--&#x27;         ` *    ___)( )(___ *   (((__) (__)))    高山仰止,景行行止.虽不能至,心向往之。 */#include &lt;iostream&gt;#include &lt;string.h&gt;using namespace std;int a[1005], n, k;// If this comment is removed the program will blow up// 如果删了此处注释程序就炸了int main() &#123;	memset(a, 0, sizeof(a)); //将a置0,需包含&lt;string.h&gt;	cin &gt;&gt; n &gt;&gt; k;	for (int i = 1; i &lt;= k; i++) &#123;		for (int j = 1; j &lt;= n; j++) &#123;			if (j % i == 0) &#123;				a[j] = !a[j];			&#125;		&#125;	&#125;	int first = 1;	for (int i = 1; i &lt;= n; i++)		if (a[i]) &#123;			cout &lt;&lt; &quot; &quot; &lt;&lt; i;		&#125;	cout &lt;&lt; endl;	return 0;&#125;
+    <title>线性表cpp</title>
+    <url>/2023/12/14/%E7%BA%BF%E6%80%A7%E8%A1%A8cpp-1/</url>
+    <content><![CDATA[/*********************************************************************    程序名:    版权:    作者: 蔡6    日期: 2023-12-14 15:15    说明: cai6.love*********************************************************************/#include &lt;iostream&gt;using namespace std;#define ok 1#define error 0#define true 1#define false 0#define maxsize 20typedef int elemtype;typedef struct &#123;	elemtype date[maxsize];	int length;&#125; SqList;typedef int Status;//Status为函数返回状态/* 初始化顺序线性表 */Status InitList(SqList *L) &#123;	L-&gt;length = 0;	return ok;&#125;Status visit(elemtype c) &#123; //查看数据	cout &lt;&lt; c;	return ok;&#125;Status InstEmpty(SqList L) &#123;	if (L.length == 0)		return true;	else		return false;&#125;Status ClearList(SqList *L) &#123; //需要对其进行修改则使用指针，或者引用&amp;	L-&gt;length = 0;	return ok;&#125;Status GetElen(SqList *L, int i, elemtype *e) &#123; //获取第i位元素，并将其赋值给e	if (L-&gt;length == 0 || i &lt; 1 || i &gt; L-&gt;length)		return error;	*e = L-&gt;date[i - 1];	return ok;&#125;Status  ListInsert(SqList *L, int i, elemtype e) &#123;	//对线性表的第i位进行插入e	if (L-&gt;length == maxsize )		return error;	if ( i &lt; 1 || i &gt; L-&gt;length + 1)		return error;	if (i &lt;= L-&gt;length) &#123;		for (int k = L-&gt;length - 1; k &gt;= i - 1; k--)			L-&gt;date[k + 1] = L-&gt;date[k];	&#125;	L-&gt;date[i - 1] = e;	L-&gt;length++;	return ok;&#125;Status ListDelete(SqList *L, int i) &#123;	if ( i &lt; 1 || i &gt; L-&gt;length + 1)		return error;	if (i &lt;= L-&gt;length) &#123;		for (int k = L-&gt;length - 2; k &gt;= i - 1; k--)			L-&gt;date[k] = L-&gt;date[k + 1];	&#125;	L-&gt;length--;	return ok;&#125;/* 初始条件：顺序线性表L已存在。操作结果：返回L中数据元素个数 */int ListLength(SqList L) &#123;	return L.length;&#125;Status ListTraverse(SqList L) &#123; //依次输出全部数据	for (int i = 0; i &lt; L.length; i++) &#123;		cout &lt;&lt; L.date[i] &lt;&lt; endl;	&#125;	return ok;&#125;int main() &#123;	Status i;	SqList L;	i = InitList(&amp;L);	printf(&quot;初始化L后：L.length=%d\n&quot;, L.length);	int a = 2;	i = ListInsert(&amp;L, 1, a);	i = ListInsert(&amp;L, 1, 5);	i = ListTraverse(L);	i = ListDelete(&amp;L, 2);	i = ListTraverse(L);	return 0;&#125;
+
 ]]></content>
   </entry>
   <entry>
@@ -560,10 +561,9 @@ col3
 ]]></content>
   </entry>
   <entry>
-    <title>线性表cpp</title>
-    <url>/2023/12/14/%E7%BA%BF%E6%80%A7%E8%A1%A8cpp-1/</url>
-    <content><![CDATA[/*********************************************************************    程序名:    版权:    作者: 蔡6    日期: 2023-12-14 15:15    说明: cai6.love*********************************************************************/#include &lt;iostream&gt;using namespace std;#define ok 1#define error 0#define true 1#define false 0#define maxsize 20typedef int elemtype;typedef struct &#123;	elemtype date[maxsize];	int length;&#125; SqList;typedef int Status;//Status为函数返回状态/* 初始化顺序线性表 */Status InitList(SqList *L) &#123;	L-&gt;length = 0;	return ok;&#125;Status visit(elemtype c) &#123; //查看数据	cout &lt;&lt; c;	return ok;&#125;Status InstEmpty(SqList L) &#123;	if (L.length == 0)		return true;	else		return false;&#125;Status ClearList(SqList *L) &#123; //需要对其进行修改则使用指针，或者引用&amp;	L-&gt;length = 0;	return ok;&#125;Status GetElen(SqList *L, int i, elemtype *e) &#123; //获取第i位元素，并将其赋值给e	if (L-&gt;length == 0 || i &lt; 1 || i &gt; L-&gt;length)		return error;	*e = L-&gt;date[i - 1];	return ok;&#125;Status  ListInsert(SqList *L, int i, elemtype e) &#123;	//对线性表的第i位进行插入e	if (L-&gt;length == maxsize )		return error;	if ( i &lt; 1 || i &gt; L-&gt;length + 1)		return error;	if (i &lt;= L-&gt;length) &#123;		for (int k = L-&gt;length - 1; k &gt;= i - 1; k--)			L-&gt;date[k + 1] = L-&gt;date[k];	&#125;	L-&gt;date[i - 1] = e;	L-&gt;length++;	return ok;&#125;Status ListDelete(SqList *L, int i) &#123;	if ( i &lt; 1 || i &gt; L-&gt;length + 1)		return error;	if (i &lt;= L-&gt;length) &#123;		for (int k = L-&gt;length - 2; k &gt;= i - 1; k--)			L-&gt;date[k] = L-&gt;date[k + 1];	&#125;	L-&gt;length--;	return ok;&#125;/* 初始条件：顺序线性表L已存在。操作结果：返回L中数据元素个数 */int ListLength(SqList L) &#123;	return L.length;&#125;Status ListTraverse(SqList L) &#123; //依次输出全部数据	for (int i = 0; i &lt; L.length; i++) &#123;		cout &lt;&lt; L.date[i] &lt;&lt; endl;	&#125;	return ok;&#125;int main() &#123;	Status i;	SqList L;	i = InitList(&amp;L);	printf(&quot;初始化L后：L.length=%d\n&quot;, L.length);	int a = 2;	i = ListInsert(&amp;L, 1, a);	i = ListInsert(&amp;L, 1, 5);	i = ListTraverse(L);	i = ListDelete(&amp;L, 2);	i = ListTraverse(L);	return 0;&#125;
-
+    <title>算法竞赛入门经典3-2</title>
+    <url>/2023/12/03/%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B%E5%85%A5%E9%97%A8%E7%BB%8F%E5%85%B83-2/</url>
+    <content><![CDATA[算法竞赛入门经典3-22023-12-02 10:35 /*** *                    _ooOoo_ *                   o8888888o *                   88&quot; . &quot;88 *                   (| -_- |) *                    O\ = /O *                ____/`---&#x27;\____ *              .   &#x27; \\| |// `. *               / \\||| : |||// \ *             / _||||| -:- |||||- \ *               | | \\\ - /// | | *             | \_| &#x27;&#x27;\---/&#x27;&#x27; | | *              \ .-\__ `-` ___/-. / *           ___`. .&#x27; /--.--\ `. . __ *        .&quot;&quot; &#x27;&lt; `.___\_&lt;|&gt;_/___.&#x27; &gt;&#x27;&quot;&quot;. *       | | : `- \`.;`\ _ /`;.`/ - ` : | | *         \ \ `-. \_ __\ /__ _/ .-` / / * ======`-.____`-.___\_____/___.-`____.-&#x27;====== *                    `=---=&#x27; * * ............................................. *          佛祖保佑             永无BUG *//*** * http://www.flvcd.com/ *  .--,       .--, * ( (  \.---./  ) ) *  &#x27;.__/o   o\__.&#x27; *     &#123;=  ^  =&#125; *      &gt;  -  &lt; *     /       \ *    //       \\ *   //|   .   |\\ *   &quot;&#x27;\       /&#x27;&quot;_.-~^`&#x27;-. *      \  _  /--&#x27;         ` *    ___)( )(___ *   (((__) (__)))    高山仰止,景行行止.虽不能至,心向往之。 */#include &lt;iostream&gt;#include &lt;string.h&gt;using namespace std;int a[1005], n, k;// If this comment is removed the program will blow up// 如果删了此处注释程序就炸了int main() &#123;	memset(a, 0, sizeof(a)); //将a置0,需包含&lt;string.h&gt;	cin &gt;&gt; n &gt;&gt; k;	for (int i = 1; i &lt;= k; i++) &#123;		for (int j = 1; j &lt;= n; j++) &#123;			if (j % i == 0) &#123;				a[j] = !a[j];			&#125;		&#125;	&#125;	int first = 1;	for (int i = 1; i &lt;= n; i++)		if (a[i]) &#123;			cout &lt;&lt; &quot; &quot; &lt;&lt; i;		&#125;	cout &lt;&lt; endl;	return 0;&#125;
 ]]></content>
   </entry>
 </search>
