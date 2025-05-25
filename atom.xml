@@ -5,7 +5,7 @@
     <link href="https://www.cai094.top/atom.xml" rel="self"/>
   
 <link href="https://www.cai094.top/"/>
-<updated>2025-05-24T08:54:46.000Z</updated>
+<updated>2025-05-25T06:08:10.000Z</updated>
 <id>https://www.cai094.top/</id>
   
 <author>
@@ -14,6 +14,31 @@
 </author>
   
 <generator uri="https://hexo.io/">Hexo</generator>
+  
+<entry>
+    <title>小张的像素风照片</title>
+    <link href="https://www.cai094.top/2025/05/25/%E5%B0%8F%E5%BC%A0%E7%9A%84%E5%83%8F%E7%B4%A0%E9%A3%8E%E7%85%A7%E7%89%87/"/>
+    <id>https://www.cai094.top/2025/05/25/%E5%B0%8F%E5%BC%A0%E7%9A%84%E5%83%8F%E7%B4%A0%E9%A3%8E%E7%85%A7%E7%89%87/</id>
+    <published>2025-05-25T06:08:10.000Z</published>
+    <updated>2025-05-25T06:08:10.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="小张的像素风照片"><a href="#小张的像素风照片" class="headerlink" title="小张的像素风照片"></a>小张的像素风照片</h1><p><img src="/2025/05/25/%E5%B0%8F%E5%BC%A0%E7%9A%84%E5%83%8F%E7%B4%A0%E9%A3%8E%E7%85%A7%E7%89%87/image1.png" alt="1"><br><img src="/2025/05/25/%E5%B0%8F%E5%BC%A0%E7%9A%84%E5%83%8F%E7%B4%A0%E9%A3%8E%E7%85%A7%E7%89%87/image2.jpg" alt="2"><br><img src="/2025/05/25/%E5%B0%8F%E5%BC%A0%E7%9A%84%E5%83%8F%E7%B4%A0%E9%A3%8E%E7%85%A7%E7%89%87/image3.png" alt="3"></p>]]></content>
+    
+    
+      
+      
+        
+        
+          
+        
+      
+    <summary type="html"><h1 id="小张的像素风照片"><a href="#小张的像素风照片" class="headerlink" title="小张的像素风照片"></a>小张的像素风照片</h1><p><img src="/2025/05/25/%E5%B0%8F%E5%BC%A0%E7%9A%84%E5%83%8F%E7%B4%A0%E9%A3%8E%E7%85%A7%E7%89%87/image1.png" alt="1"><br><img</summary>
+    
+    
+    <category term="小张" scheme="https://www.cai094.top/tags/%E5%B0%8F%E5%BC%A0/"/>
+    
+    
+</entry>
   
 <entry>
     <title>2025-5-24</title>
@@ -469,29 +494,6 @@
         
       
     <summary type="html"><p>今天学习了java的reflect，可以通过forname获取对象，从而得到该类的所有信息，例如：类中的方法，属性，构造函数等。以及其对应的类型。还学写了代理，通过代理可以调用被代理对象的方法，并且可以在方法执行前后添加一些代码。分为静态与动态代理，静态代理需要提前写好代理类，而动态代理不需要提前写好代理类，但是需要提前写好接口。了解了日志和单元测试。</p></summary>
-    
-    
-    
-</entry>
-  
-<entry>
-    <title>Java中reflect的学习</title>
-    <link href="https://www.cai094.top/2024/05/13/Java%E4%B8%ADreflect%E7%9A%84%E5%AD%A6%E4%B9%A0/"/>
-    <id>https://www.cai094.top/2024/05/13/Java%E4%B8%ADreflect%E7%9A%84%E5%AD%A6%E4%B9%A0/</id>
-    <published>2024-05-13T09:52:47.000Z</published>
-    <updated>2024-05-13T09:52:47.000Z</updated>
-    
-    <content type="html"><![CDATA[<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> reflect;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> reflect.entity.Employee;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> ClassSample &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args) &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">Class</span> emplyeeClass = <span class="keyword">Class</span>.forName(<span class="string">&quot;reflect.entity.Employee&quot;</span>);<span class="comment">//返回具有指定名称的类对象</span></span><br><span class="line">            System.out.<span class="keyword">println</span>(<span class="string">&quot;已被加载&quot;</span>);</span><br><span class="line">            Employee emp = (Employee) emplyeeClass.newInstance();<span class="comment">//使用类对象生成对象</span></span><br><span class="line">            System.out.<span class="keyword">println</span>(emp);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (ClassNotFoundException e) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(e);<span class="comment">//类名与类路径错误</span></span><br><span class="line">        &#125; <span class="keyword">catch</span> (InstantiationException e) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(e);<span class="comment">//实例化异常，例如抽象类无法被实例化</span></span><br><span class="line">        &#125; <span class="keyword">catch</span> (IllegalAccessException e) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(e);<span class="comment">//权限不足，作用域外</span></span><br><span class="line">             &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-        
-        
-          
-        
-      
-    <summary type="html"><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span</summary>
     
     
     
