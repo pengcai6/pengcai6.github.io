@@ -1,0 +1,9 @@
+# 设置XML文件MIME类型和字符集
+AddType application/atom+xml;charset=UTF-8 .xml
+AddType application/xml;charset=UTF-8 .xml
+AddCharset UTF-8 .xml
+
+# 对atom.xml特别设置
+<Files "atom.xml">
+  Header set Content-Type "application/atom+xml; charset=UTF-8"
+</Files>

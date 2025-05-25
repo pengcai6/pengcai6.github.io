@@ -70,6 +70,18 @@ deploy:
   type: git
   repo: https://github.com/pengcai6/pengcai6.github.io.git
   branch: master
+
+# Robotstxt 生成器配置
+robotstxt:
+  useragent: "*"
+  disallow:
+    - /js/
+    - /css/
+    - /fonts/
+  allow:
+    - /
+  sitemap: https://www.cai094.top/sitemap.xml
+
 admin:
   username: 3538616223
   password_hash: $2a$10$wI/OsgN/z06.OYUCo5lrkOGhP0UhzmnMs6JVXcivHDHyYMzDeyu2.
@@ -343,7 +355,7 @@ nofollow:
 lazyload:
   enable: true
   onlypost: false  # 所有页面都启用懒加载
-  loadingImg: data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQiIGNsYXNzPSJsZHMtcmluZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJhIiB4MT0iNTAiIHkxPSIxMDAiIHgyPSI1MCIgeTI9IjAiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNmZmYiIHN0b3Atb3BhY2l0eT0iMCIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2ZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ1cmwoI2EpIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgcj0iNDAiPjxhbmltYXRlVHJhbnNmb3JtIGF0dHJpYnV0ZU5hbWU9InRyYW5zZm9ybSIgdHlwZT0icm90YXRlIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIgZHVyPSIxcyIgdmFsdWVzPSIwIDUwIDUwOzE4MCA1MCA1MDszNjAgNTAgNTAiIGtleVRpbWVzPSIwOzAuNTsxIi8+PC9jaXJjbGU+PC9zdmc+
+  loadingImg: data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQiIGNsYXNzPSJsZHMtcmluZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJhIiB4MT0iNTAiIHkxPSIxMDAiIHgyPSI1MCIgeTI9IjAiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNmZmYiIHN0b3Atb3BhY2l0eT0iMCIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2ZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgZmlsbD0ibm9uZSIgc3JvbGU9InVybCgjYSk7IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgcj0iNDAiPjxhbmltYXRlVHJhbnNmb3JtIGF0dHJpYnV0ZU5hbWU9InRyYW5zZm9ybSIgdHlwZT0icm90YXRlIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIgZHVyPSIxcyIgdmFsdWVzPSIwIDUwIDUwOzE4MCA1MCA1MDszNjAgNTAgNTAiIGtleVRpbWVzPSIwOzAuNTsxIi8+PC9jaXJjbGU+PC9zdmc+
   isSPA: true  # 启用SPA模式支持
 
 # RSS订阅
@@ -353,8 +365,14 @@ feed:
   path: atom.xml
   limit: 20
   hub:
-  content:
-  content_limit: 140
+  content: true
+  content_limit: 300
+  content_limit_delim: ' '
+  order_by: -date
+  icon: icon.png
+  autodiscovery: true
+  template: source/_data/atom.xml
+  xml_encoding: UTF-8
 
 # hexo-all-minifier 配置
 all_minifier: true
@@ -393,3 +411,14 @@ image_minifier:
   optimizationLevel: 2
   pngquant: false
   progressive: false
+
+# hexo-symbols-count-time 字数统计和阅读时间
+symbols_count_time:
+  symbols: true                   # 文章字数统计
+  time: true                      # 文章阅读时间
+  total_symbols: true             # 站点总字数统计
+  total_time: true                # 站点总阅读时间
+  exclude_codeblock: false        # 排除代码块字数统计
+  awl: 4                          # 平均字长（Average Word Length）
+  wpm: 275                        # 每分钟阅读字数（Words Per Minute）
+  suffix: "mins."                 # 时间后缀

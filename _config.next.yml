@@ -18,6 +18,28 @@ dns_prefetch:
   - cdn.staticfile.org
   - fonts.googleapis.com
   - fonts.gstatic.com
+  - busuanzi.ibruce.info
+
+# ---------------------------------------------------------------
+# 友情链接设置
+# ---------------------------------------------------------------
+# Blog rolls
+links_settings:
+  icon: fa fa-link
+  title: 友情链接
+  # Available values: block | inline
+  layout: block
+
+links:
+  # 友情链接
+  Zero | 一位喜欢小伊的好友: https://www.zero1017.com
+  Hexo | 快速、简单且强大的网志框架: https://hexo.io/zh-tw/
+  # 值得推荐的网站
+  Youtube | 视频网站: https://www.youtube.com/
+  Weibo | 中国最大社交分享平台: https://www.weibo.com/
+  Twitter | 社交分享平台: https://twitter.com/
+  CSDN: https://blog.csdn.net/jj6666djdbbd?type=blog
+  Luogu: https://www.luogu.com.cn/user/914079
 
 # ---------------------------------------------------------------
 # 主题方案选择
@@ -76,6 +98,7 @@ avatar:
 social:
   GitHub: https://github.com/pengcai6 || fab fa-github
   E-Mail: mailto:pengcai6@gmail.com || fa fa-envelope
+  RSS: /atom.xml || fa fa-rss
 
 # ---------------------------------------------------------------
 # 文章目录设置
@@ -172,7 +195,7 @@ post:
 # 使用自定义 CSS 和 JS 文件
 custom_file_path:
   style: source/css/custom.css # 自定义样式
-  # head: # DNS优化脚本已移除
+  head: source/_data/head.njk # 自定义头部内容
   # bodyEnd: # 图片优化脚本已移除
 
 # 启用动画效果
@@ -192,6 +215,8 @@ vendors:
   bootcdn: https://cdn.bootcdn.net
   # 静态资源CDN
   staticfile: https://cdn.staticfile.org
+  # 不蒜子统计CDN
+  busuanzi: https://cdn.jsdelivr.net/gh/sukkaw/busuanzi@latest/bsz.pure.mini.js
 
 # ---------------------------------------------------------------
 # 一些其他设置
@@ -248,3 +273,21 @@ pjax:
 # 图片懒加载设置 - 禁用以避免与Butterfly主题懒加载冲突
 # ---------------------------------------------------------------
 lazyload: false
+
+# ---------------------------------------------------------------
+# 不蒜子访问统计 - 显示网站访问量和访客数
+# ---------------------------------------------------------------
+busuanzi_count:
+  enable: true
+  # 是否显示站点总访客数
+  total_visitors: true
+  # 是否显示站点总访问量
+  total_views: true
+  # 是否显示文章阅读次数
+  post_views: true
+  # 自定义显示文本
+  site_uv: 访客数
+  site_uv_footer: 人
+  site_pv: 总访问量 
+  site_pv_footer: 次
+  post_views_text: 阅读次数
