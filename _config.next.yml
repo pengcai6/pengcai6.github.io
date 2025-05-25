@@ -4,6 +4,22 @@
 # ==============================================================
 
 # ---------------------------------------------------------------
+# 网站性能优化
+# ---------------------------------------------------------------
+# DNS预解析和预连接 - 加速资源加载
+preconnect:
+  enable: true
+preload:
+  enable: true
+# DNS预解析域名
+dns_prefetch:
+  - registry.npmmirror.com
+  - cdn.bootcdn.net
+  - cdn.staticfile.org
+  - fonts.googleapis.com
+  - fonts.gstatic.com
+
+# ---------------------------------------------------------------
 # 主题方案选择
 # ---------------------------------------------------------------
 # Schemes: Muse | Mist | Pisces | Gemini
@@ -153,12 +169,11 @@ post:
 # ---------------------------------------------------------------
 # 样式设置
 # ---------------------------------------------------------------
-# 使用自定义 CSS 文件
+# 使用自定义 CSS 和 JS 文件
 custom_file_path:
   style: source/css/custom.css # 自定义样式
-  # 添加自定义脚本引入
-  bodyEnd: source/js/custom-body-end.js # 在 body 末尾引入自定义脚本
-  head: source/js/custom-head.js # 在 head 中引入自定义脚本
+  # head: # DNS优化脚本已移除
+  # bodyEnd: # 图片优化脚本已移除
 
 # 启用动画效果
 motion:
@@ -166,35 +181,17 @@ motion:
   async: false
 
 # ---------------------------------------------------------------
-# CDN 设置 - 使用免费的jsDelivr CDN加速
+# CDN 设置 - 针对中国用户优化
 # ---------------------------------------------------------------
 vendors:
-  # 内部资源，可选值：local, jsdelivr, unpkg, cdnjs
-  # local: 本地文件
-  # jsdelivr: 免费的jsDelivr CDN
-  # unpkg: 免费的unpkg CDN  
-  # cdnjs: 免费的cdnjs CDN
-  internal: jsdelivr
-  
-  # 第三方CDN库
-  # 使用jsDelivr免费CDN加速
-  jquery: https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js
-  velocity: https://cdn.jsdelivr.net/npm/velocity-animate@1/velocity.min.js
-  velocity_ui: https://cdn.jsdelivr.net/npm/velocity-animate@1/velocity.ui.min.js
-  fontawesome: https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css
-  
-# ---------------------------------------------------------------
-# 预加载设置 - 提升页面加载速度
-# ---------------------------------------------------------------
-preload:
-  enable: true
-  rev: //cdn.jsdelivr.net
-  
-# ---------------------------------------------------------------
-# 资源预连接优化
-# ---------------------------------------------------------------
-preconnect:
-  enable: true
+  # 使用国内CDN加速访问
+  internal: npmmirror
+  # 国内镜像CDN配置
+  npmmirror: https://registry.npmmirror.com
+  # 备用CDN
+  bootcdn: https://cdn.bootcdn.net
+  # 静态资源CDN
+  staticfile: https://cdn.staticfile.org
 
 # ---------------------------------------------------------------
 # 一些其他设置
@@ -248,6 +245,6 @@ pjax:
     - /live2d-widget-master/
 
 # ---------------------------------------------------------------
-# 图片懒加载设置
+# 图片懒加载设置 - 禁用以避免与Butterfly主题懒加载冲突
 # ---------------------------------------------------------------
-lazyload: true
+lazyload: false

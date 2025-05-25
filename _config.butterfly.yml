@@ -911,8 +911,8 @@ pangu:
 lazyload:
   enable: true
   field: site # site/post
-  placeholder: /img/loading.gif # 可以添加loading图片
-  blur: true
+  placeholder: # 留空，不使用占位符图片，避免冲突
+  blur: false
 
 # PWA
 # See https://github.com/JLHwung/hexo-offline
@@ -948,16 +948,11 @@ css_prefix: true
 inject:
   head:
     # - <link rel="stylesheet" href="/xxx.css">
-    - <link rel="stylesheet" href="/css/universe.css">
     - <link rel="stylesheet" href="/css/custom.css">
-    - <link rel="stylesheet" href="/css/dynamic-background.css">
 
   bottom:
     # - <script src="xxxx"></scrip>
-    - <canvas id="universe"></canvas>
-    - <script defer src="/js/universe.js"></script>
-    - <script defer src="/js/cursor.js"></script>
-    - <script defer src="/js/dynamic-background.js"></script>
+    # 优化脚本已移除
 
 # CDN
 # Don't modify the following settings unless you know how they work

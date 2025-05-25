@@ -1,98 +1,218 @@
 /* 侧边栏个人信息卡片动态渐变色 */
-#aside-content > .card-widget.card-info {
-    background: linear-gradient(
-      -45deg,
+#aside-content>.card-widget.card-info {
+  background: linear-gradient(-45deg,
       #e8d8b9,
       #eccec5,
       #a3e9eb,
       #bdbdf0,
-      #eec1ea
-    );
-    box-shadow: 0 0 5px rgb(66, 68, 68);
-    position: relative;
-    background-size: 400% 400%;
-    -webkit-animation: Gradient 10s ease infinite;
-    -moz-animation: Gradient 10s ease infinite;
-    animation: Gradient 10s ease infinite !important;
-  }
-  @-webkit-keyframes Gradient {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-  @-moz-keyframes Gradient {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-  @keyframes Gradient {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-  
-  /* 黑夜模式适配 */
-  [data-theme="dark"] #aside-content > .card-widget.card-info {
-    background: #191919ee;
-  }
-  
-  /* 个人信息Follow me按钮 */
-  #aside-content > .card-widget.card-info > #card-info-btn {
-    background-color: #3eb8be;
-    border-radius: 8px;
+      #eec1ea);
+  box-shadow: 0 0 5px rgb(66, 68, 68);
+  position: relative;
+  background-size: 400% 400%;
+  -webkit-animation: Gradient 10s ease infinite;
+  -moz-animation: Gradient 10s ease infinite;
+  animation: Gradient 10s ease infinite !important;
+}
+
+@-webkit-keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
   }
 
-  /* 鼠标样式 */
-#cursor {
-    position: fixed;
-    width: 16px;
-    height: 16px;
-    /* 这里改变跟随的底色 */
-    background: #a3e9eb;
-    border-radius: 8px;
-    opacity: 0.25;
-    z-index: 10086;
-    pointer-events: none;
-    transition: 0.2s ease-in-out;
-    transition-property: background, opacity, transform;
+  50% {
+    background-position: 100% 50%;
   }
-  
-  #cursor.hidden {
-    opacity: 0;
+
+  100% {
+    background-position: 0% 50%;
   }
-  
-  #cursor.hover {
-    opacity: 0.1;
-    transform: scale(2.5);
-    -webkit-transform: scale(2.5);
-    -moz-transform: scale(2.5);
-    -ms-transform: scale(2.5);
-    -o-transform: scale(2.5);
+}
+
+@-moz-keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
   }
-  
-  #cursor.active {
-    opacity: 0.5;
-    transform: scale(0.5);
-    -webkit-transform: scale(0.5);
-    -moz-transform: scale(0.5);
-    -ms-transform: scale(0.5);
-    -o-transform: scale(0.5);
+
+  50% {
+    background-position: 100% 50%;
   }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* 黑夜模式适配 */
+[data-theme="dark"] #aside-content>.card-widget.card-info {
+  background: #191919ee;
+}
+
+/* 个人信息Follow me按钮 */
+#aside-content>.card-widget.card-info>#card-info-btn {
+  background-color: #3eb8be;
+  border-radius: 8px;
+}
+
+/* ========================================
+   图片优化和性能优化样式
+======================================== */
+
+/* 图片懒加载优化 */
+img[data-src] {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+img.lazy-loading {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+img.lazy-loaded {
+  opacity: 1;
+}
+
+img.lazy-error {
+  opacity: 0.5;
+  filter: grayscale(100%);
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* 图片容器优化 */
+.post-content img,
+.article-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post-content img:hover,
+.article-content img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* 加载指示器 */
+.loading-indicator {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-right: 10px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* 预加载优化 */
+.preload-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.preload-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  animation: loading-sweep 2s infinite;
+}
+
+@keyframes loading-sweep {
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: 100%;
+  }
+}
+
+/* 网络状态指示器 */
+.network-status {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.network-status.offline {
+  background: #e74c3c;
+  color: white;
+  opacity: 1;
+}
+
+.network-status.slow {
+  background: #f39c12;
+  color: white;
+  opacity: 1;
+}
+
+/* 针对移动设备的优化 */
+@media (max-width: 768px) {
+
+  .post-content img,
+  .article-content img {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  /* 移动端减少动画效果 */
+  .lazy-loading {
+    animation: none;
+    background: #f5f5f5;
+  }
+}
+
+/* 高DPI屏幕优化 */
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+  img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}

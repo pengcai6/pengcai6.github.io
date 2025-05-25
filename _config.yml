@@ -273,49 +273,49 @@ index_layout: 3
 #   color: "['#ebedf0', '#a2f7af', '#6ce480', '#54ad63', '#469252', '#31753c', '#1f5f2a', '#13531f', '#084111', '#032b09', '#000000']"
 #   api: https://github.8888-8888.tech/api
 #   # 本地文件路径，请下载到主题文件夹的source目录下
-#   calendar_js: /js/hexo_githubcalendar.js
+#   calendar_js: # 脚本已移除
 #   plus_style: ""
 
 # ===============================================================
 # 博客加速优化配置
 # ===============================================================
 
-# hexo-neat 代码压缩优化
-neat_enable: true
+# hexo-neat 代码压缩优化 - 暂时禁用以避免与hexo-all-minifier冲突
+neat_enable: false
 neat_html:
-  enable: true
+  enable: false
   exclude:
     - '*.min.html'
 
 neat_css:
-  enable: true
+  enable: false
   exclude:
     - '*.min.css'
 
 neat_js:
-  enable: true
+  enable: false
   mangle: true
   output:
   compress:
   exclude:
     - '*.min.js'
 
-# hexo-filter-optimize 静态资源优化
+# hexo-filter-optimize 静态资源优化 - 暂时禁用以避免冲突
 filter_optimize:
-  enable: true
+  enable: false
   # 压缩HTML
   html:
-    enable: true
+    enable: false
     exclude:
       - '**/*.min.html'
   # 压缩CSS
   css:
-    enable: true
+    enable: false
     exclude:
       - '**/*.min.css'
   # 压缩JS
   js:
-    enable: true
+    enable: false
     mangle: 
       toplevel: true
     output:
@@ -339,12 +339,12 @@ nofollow:
     - 'pengcai6.github.io'
     - 'github.com/pengcai6'
 
-# hexo-lazyload-image 图片懒加载
+# hexo-lazyload-image 图片懒加载优化
 lazyload:
   enable: true
-  onlypost: false
-  loadingImg: # 可选：loading图片路径
-  isSPA: false
+  onlypost: false  # 所有页面都启用懒加载
+  loadingImg: data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQiIGNsYXNzPSJsZHMtcmluZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJhIiB4MT0iNTAiIHkxPSIxMDAiIHgyPSI1MCIgeTI9IjAiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNmZmYiIHN0b3Atb3BhY2l0eT0iMCIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2ZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ1cmwoI2EpIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgcj0iNDAiPjxhbmltYXRlVHJhbnNmb3JtIGF0dHJpYnV0ZU5hbWU9InRyYW5zZm9ybSIgdHlwZT0icm90YXRlIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIgZHVyPSIxcyIgdmFsdWVzPSIwIDUwIDUwOzE4MCA1MCA1MDszNjAgNTAgNTAiIGtleVRpbWVzPSIwOzAuNTsxIi8+PC9jaXJjbGU+PC9zdmc+
+  isSPA: true  # 启用SPA模式支持
 
 # RSS订阅
 feed:
@@ -355,4 +355,41 @@ feed:
   hub:
   content:
   content_limit: 140
-  content_limit_delim: ' '
+
+# hexo-all-minifier 配置
+all_minifier: true
+
+# HTML 压缩
+html_minifier:
+  enable: true
+  ignore_error: false
+  silent: false
+  exclude:
+    - '*.min.html'
+
+# CSS 压缩
+css_minifier:
+  enable: true
+  silent: false
+  exclude:
+    - '*.min.css'
+
+# JS 压缩 - 温和模式，避免语法错误
+js_minifier:
+  enable: true
+  mangle: false  # 禁用变量名混淆，避免错误
+  output:
+    comments: false
+  compress:
+    warnings: false
+  exclude:
+    - '*.min.js'
+
+# 图片压缩
+image_minifier:
+  enable: true
+  interlaced: false
+  multipass: false
+  optimizationLevel: 2
+  pngquant: false
+  progressive: false

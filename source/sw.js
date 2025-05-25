@@ -1,9 +1,10 @@
 // Service Worker for Progressive Web App caching
-// 提供离线缓存和资源优化
+// 针对中国网络环境优化的缓存策略
 
-const CACHE_NAME = 'blog-cache-v1';
-const STATIC_CACHE = 'static-cache-v1';
-const DYNAMIC_CACHE = 'dynamic-cache-v1';
+const CACHE_NAME = 'blog-cache-v2';
+const STATIC_CACHE = 'static-cache-v2';
+const DYNAMIC_CACHE = 'dynamic-cache-v2';
+const CDN_CACHE = 'cdn-cache-v2';
 
 // 需要缓存的静态资源
 const STATIC_ASSETS = [
@@ -12,13 +13,15 @@ const STATIC_ASSETS = [
     '/js/next-boot.js',
     '/js/utils.js',
     '/images/avatar.png',
-    '/images/logo.svg'
+    '/images/logo.svg',
+    '/images/favicon-32x32-next.png'
 ];
 
-// 需要缓存的CDN资源
+// 国内CDN资源
 const CDN_ASSETS = [
-    'https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js',
-    'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css'
+    'https://registry.npmmirror.com/jquery/latest/files/dist/jquery.min.js',
+    'https://cdn.bootcdn.net/ajax/libs/font-awesome/6.0.0/css/all.min.css',
+    'https://cdn.staticfile.org/pace/1.2.4/pace.min.js'
 ];
 
 // 安装Service Worker
@@ -95,12 +98,12 @@ self.addEventListener('fetch', event => {
             })
         );
         return;
-    }
-
-    // CDN资源缓存策略：缓存优先，长期缓存
-    if (url.hostname.includes('cdn.jsdelivr.net') ||
-        url.hostname.includes('unpkg.com') ||
-        url.hostname.includes('registry.npmmirror.com')) {
+    }    // CDN资源缓存策略：缓存优先，长期缓存
+    if (url.hostname.includes('registry.npmmirror.com') ||
+        url.hostname.includes('cdn.bootcdn.net') ||
+        url.hostname.includes('cdn.staticfile.org') ||
+        url.hostname.includes('cdn.jsdelivr.net') ||
+        url.hostname.includes('unpkg.com')) {
 
         event.respondWith(
             caches.match(request).then(response => {
