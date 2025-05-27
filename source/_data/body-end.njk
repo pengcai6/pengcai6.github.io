@@ -1,0 +1,95 @@
+<script>
+// 增强代码块复制功能
+document.addEventListener('DOMContentLoaded', function() {
+  // 覆盖默认的复制按钮行为
+  document.querySelectorAll('.copy-btn').forEach(button => {
+    const originalClickHandler = button.onclick;
+    button.onclick = null;
+    
+    button.addEventListener('click', function() {
+      const target = this.parentNode;
+      const element = target.closest('figure.highlight') || target;
+      const lines = element.querySelector('.code') || element.querySelector('code');
+      const code = lines.innerText;
+      
+      if (navigator.clipboard) {
+        // 使用现代剪贴板API
+        navigator.clipboard.writeText(code).then(() => {
+          // 成功复制
+          button.querySelector('i').className = 'fa fa-check-circle fa-fw';
+          button.classList.add('copy-btn-success');
+          
+          // 显示提示
+          const tooltip = document.createElement('div');
+          tooltip.className = 'copy-success-tooltip';
+          tooltip.innerHTML = '复制成功!';
+          tooltip.style.position = 'absolute';
+          tooltip.style.background = 'rgba(0, 0, 0, 0.7)';
+          tooltip.style.color = '#fff';
+          tooltip.style.padding = '5px 10px';
+          tooltip.style.borderRadius = '3px';
+          tooltip.style.fontSize = '12px';
+          tooltip.style.top = '-30px';
+          tooltip.style.right = '0';
+          tooltip.style.opacity = '0';
+          tooltip.style.transition = 'opacity 0.3s ease';
+          
+          button.appendChild(tooltip);
+          
+          // 显示提示
+          setTimeout(() => {
+            tooltip.style.opacity = '1';
+          }, 10);
+          
+          // 隐藏提示
+          setTimeout(() => {
+            tooltip.style.opacity = '0';
+            setTimeout(() => {
+              button.removeChild(tooltip);
+            }, 300);
+          }, 1500);
+          
+        }, () => {
+          // 复制失败
+          button.querySelector('i').className = 'fa fa-times-circle fa-fw';
+          button.classList.add('copy-btn-danger');
+        });
+      } else {
+        // 回退到旧方法
+        const ta = document.createElement('textarea');
+        ta.style.top = window.scrollY + 'px'; 
+        ta.style.position = 'absolute';
+        ta.style.opacity = '0';
+        ta.readOnly = true;
+        ta.value = code;
+        document.body.appendChild(ta);
+        ta.select();
+        ta.setSelectionRange(0, code.length);
+        ta.readOnly = false;
+        const result = document.execCommand('copy');
+        
+        if (result) {
+          // 成功复制
+          button.querySelector('i').className = 'fa fa-check-circle fa-fw';
+          button.classList.add('copy-btn-success');
+        } else {
+          // 复制失败 
+          button.querySelector('i').className = 'fa fa-times-circle fa-fw';
+          button.classList.add('copy-btn-danger');
+        }
+        
+        ta.blur();
+        button.blur();
+        document.body.removeChild(ta);
+      }
+      
+      // 重置按钮状态
+      setTimeout(() => {
+        button.querySelector('i').className = 'fa fa-copy fa-fw';
+        button.classList.remove('copy-btn-success');
+        button.classList.remove('copy-btn-danger');
+      }, 1500);
+    });
+  });
+});
+</script>

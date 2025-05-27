@@ -115,11 +115,14 @@ toc:
 # ---------------------------------------------------------------
 codeblock:
   theme:
-    light: default
+    light: atom-one-light
     dark: atom-one-dark
   copy_button:
     enable: true
-    style: default
+    style: mac
+  prism:
+    light: default
+    dark: atom-dark
 
 # ---------------------------------------------------------------
 # 返回顶部按钮
