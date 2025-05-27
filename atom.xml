@@ -5,7 +5,7 @@
     <link href="https://www.cai094.top/atom.xml" rel="self"/>
   
 <link href="https://www.cai094.top/"/>
-<updated>2025-05-25T06:08:10.000Z</updated>
+<updated>2025-05-27T06:54:31.000Z</updated>
 <id>https://www.cai094.top/</id>
   
 <author>
@@ -14,6 +14,31 @@
 </author>
   
 <generator uri="https://hexo.io/">Hexo</generator>
+  
+<entry>
+    <title>减肥诀窍</title>
+    <link href="https://www.cai094.top/2025/05/27/%E5%87%8F%E8%82%A5%E8%AF%80%E7%AA%8D/"/>
+    <id>https://www.cai094.top/2025/05/27/%E5%87%8F%E8%82%A5%E8%AF%80%E7%AA%8D/</id>
+    <published>2025-05-27T06:54:31.000Z</published>
+    <updated>2025-05-27T06:54:31.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="减肥诀窍"><a href="#减肥诀窍" class="headerlink" title="减肥诀窍"></a>减肥诀窍</h1><ul><li>细嚼慢咽，尽量多咀嚼且延长用餐时间。<blockquote><p> 原因：你吃得太快大脑反应不过来你饱了，等你感觉饱的时候其实已经超量了</p></blockquote></li><li>每天如果不是饿的发慌，一天2顿饭够了，<br>或者把2顿分成4份来吃。这样应该更能减肥。</li><li>先吃素菜，然后减少饭量</li></ul><hr><p><strong>参考链接：</strong></p><ul><li><a href="https://linux.do/t/topic/681849" rel="external nofollow noreferrer">相关讨论</a></li></ul>]]></content>
+    
+    
+      
+      
+        
+        
+          
+        
+      
+    <summary type="html"><h1 id="减肥诀窍"><a href="#减肥诀窍" class="headerlink" title="减肥诀窍"></a>减肥诀窍</h1><ul><li>细嚼慢咽，尽量多咀嚼且延长用餐时间。<blockquote><p></summary>
+    
+    
+    <category term="减肥" scheme="https://www.cai094.top/tags/%E5%87%8F%E8%82%A5/"/>
+    
+    
+</entry>
   
 <entry>
     <title>小张的像素风照片</title>
@@ -473,27 +498,6 @@
         
       
     <summary type="html"><ul><li>已经学习至<strong>js-dom</strong></li></ul></summary>
-    
-    
-    
-</entry>
-  
-<entry>
-    <title>2024-5-14小计</title>
-    <link href="https://www.cai094.top/2024/05/14/2024-5-14%E5%B0%8F%E8%AE%A1/"/>
-    <id>https://www.cai094.top/2024/05/14/2024-5-14%E5%B0%8F%E8%AE%A1/</id>
-    <published>2024-05-14T12:08:40.000Z</published>
-    <updated>2024-05-14T12:08:40.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>今天学习了java的reflect，可以通过forname获取对象，从而得到该类的所有信息，例如：类中的方法，属性，构造函数等。以及其对应的类型。还学写了代理，通过代理可以调用被代理对象的方法，并且可以在方法执行前后添加一些代码。分为静态与动态代理，静态代理需要提前写好代理类，而动态代理不需要提前写好代理类，但是需要提前写好接口。了解了日志和单元测试。</p>]]></content>
-    
-    
-      
-      
-        
-        
-      
-    <summary type="html"><p>今天学习了java的reflect，可以通过forname获取对象，从而得到该类的所有信息，例如：类中的方法，属性，构造函数等。以及其对应的类型。还学写了代理，通过代理可以调用被代理对象的方法，并且可以在方法执行前后添加一些代码。分为静态与动态代理，静态代理需要提前写好代理类，而动态代理不需要提前写好代理类，但是需要提前写好接口。了解了日志和单元测试。</p></summary>
     
     
     
