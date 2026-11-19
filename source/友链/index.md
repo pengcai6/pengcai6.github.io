@@ -5,6 +5,8 @@ type: links
 class: links-page
 ---
 
+<style>.post-body table img{width:64px;height:64px;max-width:none;object-fit:cover;border-radius:50%;margin:0}</style>
+
 ## 欢迎各位朋友与我交换友链
 
 > 如果你也想和我交换友链，请在下方留言告诉我你的网站信息：

@@ -32,9 +32,9 @@ comments: false
   
   <div class="button-group">
     <a href="/" class="home-btn">🏠 回到首页</a>
-    <a href="/archives" class="home-btn">📚 查看归档</a>
-    <a href="/tags" class="home-btn">🏷️ 浏览标签</a>
-    <a href="/categories" class="home-btn">📁 分类</a>
+    <a href="/archives/" class="home-btn">📚 查看归档</a>
+    <a href="/标签/" class="home-btn">🏷️ 浏览标签</a>
+    <a href="/分类/" class="home-btn">📁 分类</a>
   </div>
   
   <div class="fun-facts">
@@ -55,8 +55,14 @@ comments: false
             if (e.key === 'Enter') {
                 const query = this.value.trim();
                 if (query) {
-                    // 根据你的博客搜索功能调整这个URL
-                    window.location.href = '/search/?q=' + encodeURIComponent(query);
+                    // 打开 NexT 本地搜索弹窗并填入关键词
+                    const popupInput = document.querySelector('.search-pop-overlay .search-input');
+                    const trigger = document.querySelector('.popup-trigger');
+                    if (popupInput && trigger) {
+                        popupInput.value = query;
+                        trigger.click();
+                        popupInput.dispatchEvent(new Event('input'));
+                    }
                 }
             }
         });
