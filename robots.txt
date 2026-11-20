@@ -4,3 +4,4 @@ Disallow: /css/
 Disallow: /fonts/
 Allow: /
 Sitemap: https://hugo.1338888.xyz/sitemap.xml
+Sitemap: https://hugo.1338888.xyz/hugo-blog/sitemap.xml
