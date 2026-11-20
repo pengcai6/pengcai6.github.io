@@ -1,3 +1,3 @@
 [build]
-  command = ""
   publish = "."
+  command = "echo \"static site, no build\""
